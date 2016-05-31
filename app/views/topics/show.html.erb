@@ -3,3 +3,4 @@
 
 <%= link_to "Zurück", topics_path, class: "btn btn-default" %>
 <%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
+<%= link_to "Löschen", topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Wollen Sie das Thema wirklich löschen?" } %>

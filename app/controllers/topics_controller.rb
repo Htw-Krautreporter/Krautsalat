@@ -33,6 +33,8 @@ class TopicsController < ApplicationController
 	end
 
 	def destroy
+		@topic.destroy
+		redirect_to topics_path
 	end
 
 	private
