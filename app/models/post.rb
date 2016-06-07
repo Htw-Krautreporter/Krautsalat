@@ -1,4 +1,4 @@
 class Post < ActiveRecord::Base
-  belongs_to :topics
-  belongs_to :users
+  belongs_to :topic
+  belongs_to :user
 end

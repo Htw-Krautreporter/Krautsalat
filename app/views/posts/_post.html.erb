@@ -1,4 +1,4 @@
 <p><%= post.content %></p>
 
-<%= link_to "Bearbeiten", edit_topic_post_path(post.topic_id, post), class: "btn btn-default" %>
-<%= link_to "Löschen", topic_post_path(post.topic_id, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
+<%= link_to "Bearbeiten", edit_topic_post_path(post.topic, post), class: "btn btn-default" %>
+<%= link_to "Löschen", topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
