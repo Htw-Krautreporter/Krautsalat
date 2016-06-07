@@ -1,6 +1,13 @@
 <h2><%= @topic.title %></h2>
+<p>Verfasst von <%= @user.email %> vor <%= time_ago_in_words(@topic.created_at)%>  </p>
 <p><%= @topic.description %></p>
+
+<h3>Beiträge:</h3>
+<%= render @topic.posts %>
+
+<h3>Beitrag hinzufügen:</h3>
+<%= render 'posts/form' %>
 
 <%= link_to "Zurück", topics_path, class: "btn btn-default" %>
 <%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
-<%= link_to "Löschen", topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Wollen Sie das Thema wirklich löschen?" } %>
+<%= link_to "Löschen", topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie das Thema wirklich löschen?" } %>

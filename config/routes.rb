@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
- # get 'main/index'
 
   resources :topics do
     resources :posts 
