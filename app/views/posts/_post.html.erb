@@ -1,4 +1,7 @@
 <p><%= post.content %></p>
+<p> Verfasst von <%= post.user.email %> am <%= time_string(post.created_at) %>.</p>
 
-<%= link_to "Bearbeiten", edit_topic_post_path(post.topic, post), class: "btn btn-default" %>
-<%= link_to "Löschen", topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
+<% if user_signed_in? && post.user_id == current_user.id %>
+	<%= link_to "Bearbeiten", edit_topic_post_path(post.topic, post), class: "btn btn-default" %>
+	<%= link_to "Löschen", topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
+<% end %>

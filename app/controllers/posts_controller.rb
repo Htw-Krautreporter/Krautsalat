@@ -2,6 +2,9 @@ class PostsController < ApplicationController
 	before_action :find_topic
 	before_action :find_post, only: [:edit, :update, :destroy]
 
+	def show
+	end
+
 	def create
 		@post = @topic.posts.create(post_params)
 		@post.user_id = current_user.id
