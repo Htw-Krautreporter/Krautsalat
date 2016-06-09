@@ -1,5 +1,5 @@
 <h2><%= @topic.title %></h2>
-<p>Verfasst von <%= @topic.user.email %> vor <%= time_ago_in_words(@topic.created_at)%>  </p>
+<p>Verfasst von <%= @topic.user.email %> am <%= @time %>  </p>
 <p><%= @topic.description %></p>
 
 <h3>Beiträge:</h3>

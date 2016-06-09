@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
 	end
 
 	def show
+		@time = timeToString
 	end
 
 	def new
@@ -47,6 +48,13 @@ class TopicsController < ApplicationController
 
 		def find_topic
 			@topic = Topic.find(params[:id])
+		end
+
+		def timeToString
+			@time = @topic.created_at.in_time_zone("Berlin")
+			@day = @time.day < 10 ? "0#{@time.day}" : @time.day
+			@month = @time.month < 10 ? "0#{@time.month}" : @time.month
+			"#{@day}.#{@month}.#{@time.year} um #{@time.hour}:#{@time.min} Uhr"
 		end
 
 end

@@ -14,7 +14,9 @@
 				<%= link_to "Krautsalat", root_path, class:"navbar-brand"%>
 			</div>
 			<ul class="nav navbar-nav">
-			<li><%= link_to "Registrieren", new_user_registration_path %></li>
+			<% unless user_signed_in? %>
+				<li><%= link_to "Registrieren", new_user_registration_path %></li>
+			<% end %>
 			<% if user_signed_in? %>
 				<li><%= link_to "Ausloggen", destroy_user_session_path, method: :delete %></li>
 			<% else %>
