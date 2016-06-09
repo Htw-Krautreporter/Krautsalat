@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
 	before_action :find_topic, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!
+	before_action :authenticate_user! 
 
 	def index
 		@topics = Topic.all.order("created_at DESC")
