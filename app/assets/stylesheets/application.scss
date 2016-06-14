@@ -13,6 +13,195 @@
  *= require_self
  *= require_tree .
  */
-
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display|Muli:300,400);
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/* General styles */
+
+body {
+	background-color: #f2f2f2;
+	font-family: 'Minion Pro', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Muli', sans-serif;
+	font-weight: 300;	
+}
+
+h1{
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+.btn-custom {
+	background-color: #fff;
+	color: #0a8fd5;
+	font-family: 'Muli', sans-serif; 
+	font-weight: 300;
+	border-radius: 8px;
+	padding: 10px 20px;
+	&:hover {
+		color: #383838;
+		transition: 0.5s;
+		background-color: #fff;
+		text-decoration: none;
+	}
+}
+
+.btn:hover {
+	transition: 0.5s;
+	color: #383838;
+	background-color: #fff;
+}
+
+
+/* Navbar styles */
+
+.navbar {
+	font-family: 'Muli', sans-serif;
+	text-transform: uppercase;
+}
+
+.navbar-default {
+
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #fff;
+
+	.navbar-nav > li > a {
+		color: #222;
+	}
+
+	.navbar-link {
+		color: #222;
+	}
+
+	.navbar-brand {
+		color: #222;
+		letter-spacing: 1.1px;
+	}
+
+}
+
+
+/* Links styles */
+
+.links {
+	margin-top: 20px;
+	.btn-default {
+		color: #0a8fd5;
+	}
+}
+
+
+/* Topic styles */
+
+.topic {
+	box-sizing: border-box;
+	background-color: #fff;
+	margin-bottom: 25px;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 1.4em 1.4em;
+	height: 150px;
+	border-bottom: 4px solid #fd0243;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+
+	.topic-title, .topic-title a {
+		font-size: 1.3em;
+		font-family: 'Muli', sans-serif;
+		font-weight: 300;
+		margin-top: 0;
+		color: black;
+		margin-bottom: 25px;
+		text-decoration: none;
+		height: 1.5em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.topic-desc{
+		height: 3em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.topic-author{
+		height: 1em;
+	}
+
+	.btn-custom {
+		margin-top: 20px;
+	}
+
+}
+.topic:hover{
+	.topic-title a{
+		color: #fd0243;
+	}
+}
+
+
+.topic:nth-child(4n) {
+	clear: left;
+}
+
+/* Topic show-page styles */
+
+.topic-show {
+	box-sizing: border-box;
+	background-color: #383838;
+	padding: 2.0em 1.5em;
+	border-bottom: 4px solid #0a8fd5;
+	color: #fff;
+	font-family: 'Muli', sans-serif;
+	font-weight: 300;
+
+	h2 {
+		margin-top: 0;
+	}
+
+	.topic-desc {
+		font-size: 1.1em;
+		line-height: 1.75;
+		margin-bottom: 50px;
+	}
+
+	.topic-posted-by {
+		color: #eee;
+		font-size: 0.9em;
+	}
+
+	.reply-to-msg {
+		margin-top: 50px;
+	}
+
+}
+
+
+/* Comment styles */
+
+.comment {
+	border-bottom: 1px solid #fff;
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	.comment-content {
+		font-size: 1.25em;
+	}	
+
+	.comment-posted-by {
+		color: #eee;
+		font-size: 0.8em;
+	}
+
+	.links {
+		margin-top: 15px;
+		a {
+			color: #0a8fd5;
+			margin-right: 15px;
+		}
+	}
+}
