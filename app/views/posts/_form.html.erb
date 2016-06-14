@@ -1,4 +1,4 @@
 <%= simple_form_for([@topic, @topic.posts.build]) do |f| %> 
 	<%= f.input :content, label: "Beitrag" %>
-	<%= f.button :submit %>
+	<%= f.button :submit, :class => 'btn-custom' %>
 <% end %>
