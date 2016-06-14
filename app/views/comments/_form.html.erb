@@ -1,0 +1,4 @@
+<%= simple_form_for([@post, @post.comment.build]) do |f| %> 
+	<%= f.input :content, label: "Beitrag" %>
+	<%= f.button :submit, :class => 'btn-custom' %>
+<% end %>
