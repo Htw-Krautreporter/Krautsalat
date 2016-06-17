@@ -8,4 +8,11 @@
 			<%= link_to "Löschen", topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
 		<% end %>
 	</div>
+
+	<h4>Kommentare:</h4>
+	<%= render post.comments %>
+
+	<h4>Beitrag kommentieren</h4>
+	<%= render 'comments/form' %>
+
 </div>
