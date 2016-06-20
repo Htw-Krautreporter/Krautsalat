@@ -1,1 +1,10 @@
 <p><%= comment.content %></p>
+<p>Verfasst von <%= comment.user.email %> am <%= time_string(comment.created_at) %>.</p>
+
+<div class="links">
+	<% if user_signed_in? && comment.user_id == current_user.id %>
+		<% post = Post.find(comment.post_id) %>
+		<%= link_to "Bearbeiten", edit_topic_post_comment_path(post.topic, post, comment), class: "btn btn-default" %>
+		<%= link_to "Löschen", topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Kommentar? wirklich löschen?" } %>
+	<% end %>
+</div>

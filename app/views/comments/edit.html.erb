@@ -1,0 +1,5 @@
+<h1>Kommentar bearbeiten</h1>
+<%= simple_form_for([@topic, @post, @comment]) do |f| %>
+	<%= f.input :content, label: "Kommentar" %>
+	<%= f.button :submit %>
+<% end %>

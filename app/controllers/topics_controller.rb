@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-	before_action :find_topic, only: [:show, :edit, :update, :destroy]
+	before_action :find_parent, only: [:show, :edit, :update, :destroy]
 	before_action :find_posts, only: [:show]
 	before_action :authenticate_user! 
 
@@ -47,7 +47,7 @@ class TopicsController < ApplicationController
 			params.require(:topic).permit(:title, :description)
 		end
 
-		def find_topic
+		def find_parent
 			@topic = Topic.find(params[:id])
 		end
 
