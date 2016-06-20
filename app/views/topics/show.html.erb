@@ -2,7 +2,16 @@
 	<div class="topic-show">
 		<h2><%= @topic.title %></h2>
 		<p class="topic-posted-by">Verfasst von <%= @topic.user.email %> am <%= time_string(@topic.created_at) %>.</p>
+
+		<p>Hinzugefügte Nutzer:
+		<% @topic.users.each do |user| %>
+		<%= " #{user.email}" %>
+		<% end %>
+		</p>
+		
 		<p class="topic-desc"><%= @topic.description %></p>
+
+		
 
 		<h3>Beiträge:</h3>
 		<%= render @topic.posts %>
