@@ -33,7 +33,9 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0px;
 }
 .alert{
-	padding: 0px;
+	text-align: center;
+	vertical-align: middle;
+	font-family: 'Muli', sans-serif;
 }
 
 h1{
@@ -61,8 +63,8 @@ h1{
 
 .btn:hover {
 	transition: 0.5s;
-	color: #fd0243;
-	background-color: #fff;
+	color: #fff;
+	background-color: #fd0243;
 }
 
 .chat{
@@ -214,6 +216,75 @@ h1{
 		font-family: 'Muli', sans-serif;
 		font-weight: 300;
 	}
+
+/* User login styles */
+
+.form-inputs input{
+	width: 60%; 
+	margin: 0 auto;
+	/*border-left: 1px solid #fd0243;*/
+}
+
+.form-inputs label{
+	font-family: 'Muli', sans-serif;
+	margin-left: 20%;
+}
+.form-inputs .help-block{
+	margin-left: 20%;
+}
+
+.hCenter{
+	text-align: center;
+	font-variant: small-caps;
+	text-decoration: underline #fd0243;
+	margin-bottom: 2%;
+}
+#new_user{
+	margin-bottom: 2%;
+}
+
+
+/* DOES NOT WORK YET! */
+.checkbox label{
+	padding-left: 1%;
+	vertical-align: top;
+	color: #a4a4a4;
+}
+input[id="user_remember_me"]{
+	width: 5%;
+	margin-left: -3.5%;
+}
+
+
+
+.form-actions input[value="Login"], input[value="Registrieren"]{
+	/*margin-left: 20%;*/
+	display: block;
+	margin: 0 auto;
+	font-family: 'Muli', sans-serif;
+	font-variant: small-caps;
+}
+input[value="Registrieren"]{
+	margin-top: 5%;
+}
+
+.loginAlternativeLinks{
+	text-align: center;
+}
+#register, #forgot{
+	color: #a4a4a4;
+	font-family: 'Muli', sans-serif;
+	font-size: 12px;
+}
+
+#register:after{
+	content: "|";
+	margin: 0% 1%;
+}
+.float-right{
+	float: right;
+}
+
 
 
 /* Comment styles */
