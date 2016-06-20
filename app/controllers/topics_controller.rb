@@ -4,9 +4,13 @@ class TopicsController < ApplicationController
 
 	def index
 		@topics = Topic.all.order("created_at DESC")
+		# @topics = Topic.where("users.include?(current_user)").order("created_at DESC")
 	end
 
 	def show
+		unless current_user == @topic.user || current_user.admin? || @topic.users.include?(current_user)
+			redirect_to topics_path
+		end
 	end
 
 	def new

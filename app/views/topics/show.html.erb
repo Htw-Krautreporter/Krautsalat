@@ -1,3 +1,4 @@
+<!--% if current_user == @topic.user || current_user.admin? || @topic.users.include?(current_user) %-->
 <div class="col-md-8 col-md-offset-2">
 	<div class="topic-show">
 		<h2><%= @topic.title %></h2>
@@ -29,3 +30,4 @@
 		</div>
 	</div>
 </div>
+<!--% end %-->
