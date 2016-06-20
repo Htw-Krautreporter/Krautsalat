@@ -1,6 +1,6 @@
 <div class="comment">
 	<p class="comment-content"><%= post.content %></p>
-	<p class="comment-posted-by"> Verfasst von <%= post.user.email %> am <%= time_string(post.created_at) %>.</p>
+	<p class="comment-posted-by"> Verfasst von <%= post.user.username %> am <%= time_string(post.created_at) %>.</p>
 
 	<div class="links">
 		<% if user_signed_in? && post.user_id == current_user.id %>
