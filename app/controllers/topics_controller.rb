@@ -3,8 +3,12 @@ class TopicsController < ApplicationController
 	before_action :authenticate_user! 
 
 	def index
-		@topics = Topic.all.order("created_at DESC")
-		# @topics = Topic.where("users.include?(current_user)").order("created_at DESC")
+		@own_topics  = Topic.find_some(current_user)
+		if current_user.admin?
+			@topics = Topic.all.order("created_at DESC")
+		else
+			@topics = current_user.topics
+		end
 	end
 
 	def show
