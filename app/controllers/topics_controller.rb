@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
 	before_action :find_topic, only: [:show, :edit, :update, :destroy]
+	before_action :find_posts, only: [:show]
 	before_action :authenticate_user! 
 
 	def index
@@ -48,6 +49,10 @@ class TopicsController < ApplicationController
 
 		def find_topic
 			@topic = Topic.find(params[:id])
+		end
+
+		def find_posts
+			@posts = Post.where("topic_id = ?", params[:id])
 		end
 
 end

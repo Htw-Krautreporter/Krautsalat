@@ -5,7 +5,17 @@
 		<p class="topic-desc"><%= @topic.description %></p>
 
 		<h3>Beiträge:</h3>
-		<%= render @topic.posts %>
+		<% @posts.each do |post| %>
+			<%= render post %>
+
+			<h4>Kommentare:</h4>
+			<%= render post.comments %>
+
+			<h4>Beitrag kommentieren</h4>
+			<% @post = post %>
+			<%= render 'comments/form' %>
+
+		<% end %>
 
 		<h3 class="reply-to-msg">Beitrag hinzufügen:</h3>
 		<%= render 'posts/form' %>
