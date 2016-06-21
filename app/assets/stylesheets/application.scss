@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar{
 	margin-bottom: 0px;
 }
-.alert{
+.alert, .notice{
 	text-align: center;
 	vertical-align: middle;
 	font-family: 'Muli', sans-serif;
@@ -61,7 +61,7 @@ h1{
 	color: #fd0243;
 }
 
-.btn:hover {
+.btn:hover, .links .btn-default:hover{
 	transition: 0.5s;
 	color: #fff;
 	background-color: #fd0243;
@@ -114,6 +114,10 @@ h1{
 		color: #fd0243;
 	}
 }
+.links-btn-group{
+	margin-top: 5% auto;
+	text-align: center;
+}
 
 
 /* Topic styles */
@@ -157,6 +161,7 @@ h1{
 		margin-top: 20px;
 	}
 
+
 }
 .topic:hover{
 	.topic-title a{
@@ -190,6 +195,9 @@ h1{
 	.topic-posted-by {
 		font-size: 0.9em;
 		color: #b2b2b1;
+		width: 80%;
+		margin-left: 10%;
+		float: left;
 	}
 
 	.reply-to-msg {
@@ -203,6 +211,12 @@ h1{
 	vertical-align: middle;
 	text-align: center;
 	padding: 0.5em 0.5em;
+	border-bottom: 1px solid #fd0243;
+
+	#downbutton, #upbutton{
+		cursor: pointer;
+		cursor: hand;
+	}
 }
 
 .topic-desc {
@@ -215,6 +229,9 @@ h1{
 		z-index: 5;
 		font-family: 'Muli', sans-serif;
 		font-weight: 300;
+		color: #7d7d7d;
+		font-style: italic;
+		display: none;
 	}
 
 /* User login styles */
@@ -309,5 +326,11 @@ input[value="Registrieren"]{
 			color: #fd0243;
 			margin-right: 15px;
 		}
+	}
+	.reply-to-msg{
+		padding-top: 20px;
+		border-top: 1px solid #f2f2f2;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #f2f2f2;
 	}
 }
