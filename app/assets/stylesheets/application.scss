@@ -285,7 +285,7 @@ input[id="user_remember_me"]{
 
 
 
-.form-actions input[value="Login"], input[value="Registrieren"], input[value="Speichern"]{
+.btn-special{
 	/*margin-left: 20%;*/
 	display: block;
 	margin: 0 auto;
@@ -298,20 +298,22 @@ input[value="Registrieren"]{
 
 .loginAlternativeLinks{
 	text-align: center;
+
+	br:nth-child(2){
+		float: right;
+	}
 }
-#register, #forgot{
+#register, #forgot, #log{
 	color: #a4a4a4;
 	font-family: 'Muli', sans-serif;
 	font-size: 12px;
 }
 
-#register:after{
+.loginAlternativeLinks a:nth-child(1):after{
 	content: "|";
 	margin: 0% 1%;
 }
-.float-right{
-	float: right;
-}
+
 
 
 
