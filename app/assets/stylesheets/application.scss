@@ -23,6 +23,9 @@ body {
 	background-color: #f2f2f2;
 	font-family: 'Minion Pro', serif;
 }
+textarea, input{
+	font-family: 'Muli', sans-serif;
+}
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Muli', sans-serif;
@@ -201,7 +204,12 @@ h1{
 	}
 
 	.reply-to-msg {
-		margin-top: 50px;
+		margin-top: 40px;
+		margin-bottom: 20px;
+		padding-top: 10px;
+		padding-bottom: 20px;
+		border-top: 1px solid #e6e6e6;
+		border-bottom: 1px solid #e6e6e6;
 	}
 
 }
@@ -211,7 +219,7 @@ h1{
 	vertical-align: middle;
 	text-align: center;
 	padding: 0.5em 0.5em;
-	border-bottom: 1px solid #fd0243;
+	border-bottom: 2px solid #fd0243;
 
 	#downbutton, #upbutton{
 		cursor: pointer;
@@ -236,7 +244,7 @@ h1{
 
 /* User login styles */
 
-.form-inputs input{
+.form-inputs input, .edit_post, .edit_topic{
 	width: 60%; 
 	margin: 0 auto;
 	/*border-left: 1px solid #fd0243;*/
@@ -253,11 +261,14 @@ h1{
 .hCenter{
 	text-align: center;
 	font-variant: small-caps;
-	text-decoration: underline #fd0243;
+	/*text-decoration: underline #fd0243;*/
 	margin-bottom: 2%;
 }
 #new_user{
 	margin-bottom: 2%;
+}
+.edit_post label, .edit_topic label{
+	font-family: 'Muli', sans-serif;
 }
 
 
@@ -274,7 +285,7 @@ input[id="user_remember_me"]{
 
 
 
-.form-actions input[value="Login"], input[value="Registrieren"]{
+.form-actions input[value="Login"], input[value="Registrieren"], input[value="Speichern"]{
 	/*margin-left: 20%;*/
 	display: block;
 	margin: 0 auto;
