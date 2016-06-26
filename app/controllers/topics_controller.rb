@@ -7,7 +7,7 @@ class TopicsController < ApplicationController
 		if current_user.admin?
 			@topics = Topic.all.order("created_at DESC")
 		else
-			@topics = current_user.topics
+			@topics = current_user.topics.order("created_at DESC")
 		end
 	end
 
