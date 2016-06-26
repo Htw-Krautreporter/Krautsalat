@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
 	before_action :authenticate_user! 
 
 	def index
-		@own_topics  = Topic.find_some(current_user)
+		@own_topics  = Topic.where(user_id: current_user.id).order("created_at DESC")
 		if current_user.admin?
 			@topics = Topic.all.order("created_at DESC")
 		else
