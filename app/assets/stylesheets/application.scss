@@ -184,16 +184,17 @@ h1{
 .topic-show, .topic-show-head {
 	box-sizing: border-box;
 	background-color: #fff;
-	padding: 2.0em 1.5em;
+	padding: 2.0em 3em;
 	border-bottom: 4px solid #fd0243;
 	color: #black;
 	font-family: 'Muli', sans-serif;
 	font-weight: 300;
 
 	h2 {
-		margin-top: 0;
+		margin-top: 0%;
 		color: #fd0243;
 		margin-bottom: 0px;
+		font-weight: bold;
 	}
 	.topic-posted-by {
 		font-size: 0.9em;
@@ -202,23 +203,36 @@ h1{
 		margin-left: 10%;
 		float: left;
 	}
-
-	.reply-to-msg {
-		margin-top: 40px;
-		margin-bottom: 20px;
-		padding-top: 10px;
-		padding-bottom: 20px;
-		border-top: 1px solid #e6e6e6;
-		border-bottom: 1px solid #e6e6e6;
+	.comment{
+	width: 90%;
+	margin: 3% 0%;
+	border-bottom: 1px solid #c6c6c6;
 	}
-
+	>div:nth-child(odd){
+	text-align: right;
+	margin-right: 0%;
+	margin-left: auto;
+	}
+	>h3:first-child{
+		display: none;
+	}
 }
+.reply-to-msg {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	/*border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;*/
+	text-align: left !important;
+}
+
 .topic-show-head{
-	height: 70px;
+	height: 80px;
 	background-color: white;
 	vertical-align: middle;
 	text-align: center;
-	padding: 0.5em 0.5em;
+	padding: 1%;
 	border-bottom: 2px solid #fd0243;
 
 	#downbutton, #upbutton{
@@ -241,6 +255,10 @@ h1{
 		font-style: italic;
 		display: none;
 	}
+
+.post_content label{
+	display: none;
+}
 
 /* User login styles */
 
@@ -267,7 +285,7 @@ h1{
 #new_user{
 	margin-bottom: 2%;
 }
-.edit_post label, .edit_topic label{
+.edit_post label, .edit_topic label, .topic_title label, .topic_description label{
 	font-family: 'Muli', sans-serif;
 }
 
@@ -287,10 +305,14 @@ input[id="user_remember_me"]{
 
 .btn-special{
 	/*margin-left: 20%;*/
-	display: block;
+	/*display: block;*/
 	margin: 0 auto;
 	font-family: 'Muli', sans-serif;
 	font-variant: small-caps;
+}
+.btn-bottom[value="Speichern"]{
+	float: left;
+	margin-right: 2%;
 }
 input[value="Registrieren"]{
 	margin-top: 5%;
