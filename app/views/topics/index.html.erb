@@ -5,6 +5,8 @@
 	<div class="col-md-4">
 		<div class="topic">
 			<h2 class="topic-title"><%= link_to topic.title, topic_path(topic) %></h2>
+			<p class="topic-author">Erstellt von mir</p>
+			<p class="topic-author">Erstellt am <%= time_string(topic.created_at) %></p>
 		</div>
 	</div>
 	<% end %>
@@ -17,6 +19,7 @@
 		<div class="topic">
 			<h2 class="topic-title"><%= link_to topic.title, topic_path(topic) %></h2>
 			<p class="topic-author">Erstellt von <%= topic.user.username %></p>
+			<p class="topic-author">Erstellt am <%= time_string(topic.created_at) %></p>
 		</div>
 	</div>
 	<% end %>
