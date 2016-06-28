@@ -1,5 +1,5 @@
 <% unless @own_topics.empty? %>
-<div class="container">
+<section class="container">
 	<h1>Eigene Themen</h1>
 	<% @own_topics.each do |topic| %>
 	<div class="col-md-4">
@@ -8,9 +8,9 @@
 		</div>
 	</div>
 	<% end %>
-</div>
+</section>
 <% end %>
-<div class="container">
+<section class="container">
 	<h1>Themen</h1>
 	<% @topics.each do |topic| %>
 	<div class="col-md-4">
@@ -20,4 +20,4 @@
 		</div>
 	</div>
 	<% end %>
-</div>
+</section>
