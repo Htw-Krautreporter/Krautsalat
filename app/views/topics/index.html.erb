@@ -1,10 +1,23 @@
-<h1>Themen</h1>
-<% @topics.each do |topic| %>
-<div class="col-md-4">
-	<div class="topic">
-		<h2 class="topic-title"><%= link_to topic.title, topic_path(topic) %></h2>
-		<p class="topic-author">Erstellt von <%= topic.user.username %></p>
+<% unless @own_topics.empty? %>
+<section class="container">
+	<h1>Eigene Themen</h1>
+	<% @own_topics.each do |topic| %>
+	<div class="col-md-4">
+		<div class="topic">
+			<h2 class="topic-title"><%= link_to topic.title, topic_path(topic) %></h2>
+		</div>
 	</div>
-	
-</div>
+	<% end %>
+</section>
 <% end %>
+<section class="container">
+	<h1>Themen</h1>
+	<% @topics.each do |topic| %>
+	<div class="col-md-4">
+		<div class="topic">
+			<h2 class="topic-title"><%= link_to topic.title, topic_path(topic) %></h2>
+			<p class="topic-author">Erstellt von <%= topic.user.username %></p>
+		</div>
+	</div>
+	<% end %>
+</section>

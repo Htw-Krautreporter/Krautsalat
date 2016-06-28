@@ -1,7 +1,15 @@
+<!--% if current_user == @topic.user || current_user.admin? || @topic.users.include?(current_user) %-->
 <div class="col-md-8 col-md-offset-2">
 	<div class="topic-show">
 		<h2><%= @topic.title %></h2>
 		<p class="topic-posted-by">Verfasst von <%= @topic.user.username %> am <%= time_string(@topic.created_at) %>.</p>
+
+		<p>Hinzugefügte Nutzer:
+		<% @topic.users.each do |user| %>
+		<%= " #{user.email}" %>
+		<% end %>
+		</p>
+		
 		<p class="topic-desc"><%= @topic.description %></p>
 
 		<h3>Beiträge:</h3>
@@ -30,3 +38,4 @@
 		</div>
 	</div>
 </div>
+<!--% end %-->
