@@ -208,7 +208,7 @@ h1{
 	margin: 3% 0%;
 	border-bottom: 1px solid #c6c6c6;
 	}
-	>div:nth-child(odd){
+	.comment:nth-child(odd){
 	text-align: right;
 	margin-right: 0%;
 	margin-left: auto;
@@ -216,16 +216,16 @@ h1{
 	>h3:first-child{
 		display: none;
 	}
-}
-.reply-to-msg {
+	.reply-to-msg {
 	margin-top: 40px;
 	margin-bottom: 20px;
 	padding-top: 10px;
 	padding-bottom: 20px;
 	/*border-top: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;*/
-	text-align: left !important;
+	}
 }
+
 
 .topic-show-head{
 	height: 80px;
