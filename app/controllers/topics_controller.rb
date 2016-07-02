@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-	before_action :find_topic, only: [:show, :edit, :update, :destroy]
+	before_action :find_topic, only: [:show, :edit, :update, :destroy, :manage_users]
 	before_action :find_posts, only: [:show]
 	before_action :authenticate_user! 
 
@@ -47,6 +47,11 @@ class TopicsController < ApplicationController
 	def destroy
 		@topic.destroy
 		redirect_to topics_path
+	end
+
+	def manage_users
+		@related_users = @topic.users.order('created_at DESC')
+		@filtered_users = User.search(params[:search]).order("created_at DESC")
 	end
 
 	private

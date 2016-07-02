@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'topics/:id/manage_users' => 'topics#manage_users', as: "manage_users"
+
   root 'topics#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

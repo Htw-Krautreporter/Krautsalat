@@ -9,6 +9,8 @@
 		<%= " #{user.email}" %>
 		<% end %>
 		</p>
+
+		<%= link_to "User bearbeiten", manage_users_path, class: "btn btn-default" %>
 		
 		<p class="topic-desc"><%= @topic.description %></p>
 

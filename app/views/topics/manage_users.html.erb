@@ -1,0 +1,17 @@
+<h2><%= @topic.title %></h2>
+
+<h3>Hinzugefügte User</h3>
+<% @related_users.each do |user| %>
+	<p><%= user.username %></p>
+<% end %>
+
+<h3>User hinzufügen</h3>
+<%= form_tag("manage_users", :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Username/Email" %>
+	<%= submit_tag "Search", value: "Suchen", class: "btn btn-default" %>
+<% end %>
+<% @filtered_users.each do |user| %>
+	<p><%= user.username %></p>
+<% end %>
+
+<%= link_to "Zurück", topic_path, class: "btn btn-default" %>
