@@ -52,27 +52,21 @@ class TopicsController < ApplicationController
 	def manage_users
 		@related_users = @topic.users.order('created_at DESC')
 		searched_users = User.search(params[:search]).order("created_at DESC")
-		@filtered_users = searched_users.select { |user| !@related_users.include? user}
+		@filtered_users = searched_users.select { |user| !@related_users.include?(user)}
 	end
 
 	def invite_user
-		@topic.users << User.find(params[:user_id])
-
-		if @topic.save
-			redirect_to manage_users_path
-		else
-			render 'manage_users'
-		end
+		user = User.find(params[:user_id])
+		@topic.users << user unless @topic.users.include?(user)
+		save_users_and_redirect(@topic)
 	end
 
 	def invite_all_filtered_users
-		@topic.users << User.where(params[:filtered_users].include? :id)
-		
-		if @topic.save
-			redirect_to manage_users_path
-		else
-			render 'manage_users'
+		params[:filtered_users].each do |user_id|
+			user = User.find(user_id)
+			@topic.users << user unless @topic.users.include?(user)
 		end
+		save_users_and_redirect(@topic)
 	end
 
 	private
@@ -87,6 +81,14 @@ class TopicsController < ApplicationController
 
 		def find_posts
 			@posts = Post.where("topic_id = ?", params[:id])
+		end
+
+		def save_users_and_redirect(topic)
+			if topic.save
+				redirect_to manage_users_path
+			else
+				render 'manage_users'
+			end
 		end
 
 end
