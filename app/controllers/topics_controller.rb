@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-	before_action :find_topic, only: [:show, :edit, :update, :destroy, :manage_users]
+	before_action :find_topic, only: [:show, :edit, :update, :destroy, :manage_users, :invite_user]
 	before_action :find_posts, only: [:show]
 	before_action :authenticate_user! 
 
@@ -51,7 +51,18 @@ class TopicsController < ApplicationController
 
 	def manage_users
 		@related_users = @topic.users.order('created_at DESC')
-		@filtered_users = User.search(params[:search]).order("created_at DESC")
+		searched_users = User.search(params[:search]).order("created_at DESC")
+		@filtered_users = searched_users.select { |user| !@related_users.include? user}
+	end
+
+	def invite_user
+		@topic.users<<(User.find(params[:user_id]))
+
+		if @topic.save
+			redirect_to manage_users_path
+		else
+			render 'manage_users'
+		end
 	end
 
 	private

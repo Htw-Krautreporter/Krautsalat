@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   get 'topics/:id/manage_users' => 'topics#manage_users', as: "manage_users"
+  post 'topics/:id/manage_users' => 'topics#invite_user', as: "invite_user"
 
   root 'topics#index'
 

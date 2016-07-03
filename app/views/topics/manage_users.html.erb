@@ -6,12 +6,13 @@
 <% end %>
 
 <h3>User hinzufügen</h3>
-<%= form_tag("manage_users", :method => "get", id: "search-form") do %>
+<%= form_tag("manage_users", method: :get, id: "search-form") do %>
 	<%= text_field_tag :search, params[:search], placeholder: "Username/Email" %>
 	<%= submit_tag "Search", value: "Suchen", class: "btn btn-default" %>
 <% end %>
 <% @filtered_users.each do |user| %>
 	<p><%= user.username %></p>
+	<%= link_to "Hinzufügen", invite_user_path(user_id: user.id), method: :post, class: "btn btn-default" %>
 <% end %>
 
 <%= link_to "Zurück", topic_path, class: "btn btn-default" %>
