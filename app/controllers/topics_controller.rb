@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
-	before_action :find_topic, only: [:show, :edit, :update, :destroy, :manage_users, :invite_user]
+	before_action :find_topic, only: [:show, :edit, :update, :destroy, :manage_users, :invite_user, :invite_all_filtered_users]
 	before_action :find_posts, only: [:show]
-	before_action :authenticate_user! 
+	before_action :authenticate_user!
 
 	def index
 		@own_topics  = Topic.where(user_id: current_user.id).order("created_at DESC")
@@ -56,8 +56,18 @@ class TopicsController < ApplicationController
 	end
 
 	def invite_user
-		@topic.users<<(User.find(params[:user_id]))
+		@topic.users << User.find(params[:user_id])
 
+		if @topic.save
+			redirect_to manage_users_path
+		else
+			render 'manage_users'
+		end
+	end
+
+	def invite_all_filtered_users
+		@topic.users << User.where(params[:filtered_users].include? :id)
+		
 		if @topic.save
 			redirect_to manage_users_path
 		else
