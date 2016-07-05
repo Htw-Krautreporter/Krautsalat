@@ -1,17 +1,26 @@
-<!--% if current_user == @topic.user || current_user.admin? || @topic.users.include?(current_user) %-->
-<div class="col-md-8 col-md-offset-2">
-	<div class="topic-show">
-		<h2><%= @topic.title %></h2>
+<script language="javascript" type="text/javascript">
+function show(){
+	document.getElementById("downbutton").style.display = 'none';
+	document.getElementById("upbutton").style.display = 'block';
+	document.getElementById("topic-description").style.display ='block';
+}
+function hide(){
+	document.getElementById("downbutton").style.display = 'block';
+	document.getElementById("upbutton").style.display = 'none';
+	document.getElementById("topic-description").style.display = 'none';
+}
+</script>
+
+<div class="container chat">
+	<div class="topic-show-head">
+		<h2 class="topic-show-title"><%= @topic.title %></h2>
 		<p class="topic-posted-by">Verfasst von <%= @topic.user.username %> am <%= time_string(@topic.created_at) %>.</p>
+		<span class="glyphicon glyphicon-menu-down" id="downbutton" onclick="show()"></span>
+		<span class="glyphicon glyphicon-menu-up" id="upbutton" onclick="hide()" style="display: none"></span>
+	</div>
 
-		<p>Hinzugefügte Nutzer:
-		<% @topic.users.each do |user| %>
-		<%= " #{user.email}" %>
-		<% end %>
-		</p>
-		
-		<p class="topic-desc"><%= @topic.description %></p>
-
+	<div class="topic-desc" id="topic-description"><%= @topic.description %></div>
+	<div class="topic-show">
 		<h3>Beiträge:</h3>
 		<% @posts.each do |post| %>
 			<%= render post %>
@@ -25,8 +34,10 @@
 
 		<% end %>
 
-		<h3 class="reply-to-msg">Beitrag hinzufügen:</h3>
+		<div class="reply-to-msg">
+		<h3>Beitrag hinzufügen:</h3>
 		<%= render 'posts/form' %>
+		</div>
 
 		<div class="links-btn-group">
 
@@ -38,4 +49,4 @@
 		</div>
 	</div>
 </div>
-<!--% end %-->
+
