@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	respond_to :html, :json
 	before_action :find_topic
 	before_action :find_post, only: [:edit, :update, :destroy]
 
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update(post_params)
-			redirect_to topic_path(@topic)
+			respond_with @post
 		else
 			render 'edit'
 		end

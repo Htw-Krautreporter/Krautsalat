@@ -1,7 +1,8 @@
 <!--% if current_user == @topic.user || current_user.admin? || @topic.users.include?(current_user) %-->
 <div class="col-md-8 col-md-offset-2">
 	<div class="topic-show">
-		<h2><%= @topic.title %></h2>
+		<h2><%=  best_in_place @topic, :title %></h2>
+		<%= @topic %> <%= :title %>
 		<p class="topic-posted-by">Verfasst von <%= @topic.user.username %> am <%= time_string(@topic.created_at) %>.</p>
 
 		<p>Hinzugefügte Nutzer:
@@ -15,7 +16,7 @@
 		<h3>Beiträge:</h3>
 		<% @posts.each do |post| %>
 			<%= render post %>
-
+			
 			<h4>Kommentare:</h4>
 			<%= render post.comments %>
 

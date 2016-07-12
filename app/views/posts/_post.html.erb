@@ -1,12 +1,16 @@
 <div class="comment">
-	<p class="comment-content"><%= post.content %></p>
-	<p class="comment-posted-by"> Verfasst von <%= post.user.username %> am <%= time_string(post.created_at) %>.</p>
-
 	<div class="links">
 		<% if user_signed_in? && post.user_id == current_user.id %>
-			<%= link_to "Bearbeiten", edit_topic_post_path(post.topic, post), class: "btn btn-default" %>
+			<%=  best_in_place [post.topic, post], :content %>
 			<%= link_to "Löschen", topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
+			<% else %>
+			<p class="comment-content"><%= post.content %></p>
 		<% end %>
+		<p class="comment-posted-by"> Verfasst von <%= post.user.username %> am <%= time_string(post.created_at) %>.
+		<% unless(post.updated_at == post.created_at)%>
+			Zuletzt bearbeitet am <%= time_string(post.created_at) %>
+		<% end %>
+		</p>
 	</div>
 
 </div>
