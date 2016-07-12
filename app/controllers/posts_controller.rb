@@ -12,7 +12,8 @@ class PostsController < ApplicationController
 		if @post.save
 			redirect_to topic_path(@topic)
 		else
-			render 'new'
+			#render 'new'
+			redirect_to topic_path(@topic)
 		end
 	end
 
