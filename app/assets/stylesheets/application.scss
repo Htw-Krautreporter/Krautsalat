@@ -206,34 +206,38 @@ h1{
 		margin-left: 10%;
 		float: left;
 	}
-	.comment{
-	width: 90%;
-	margin: 3% 0%;
-	border-bottom: 1px solid #c6c6c6;
-	padding-right: 2%;
-	text-align: justify;
+	.onePost{
+		width: 90%;
+		margin: 3% 0%;
+		border-bottom: 1px solid #c6c6c6;
+		padding-right: 2%;
+		padding-bottom: 3%;
+		text-align: justify;
 	}
-	.comment:nth-child(odd){
-	text-align: justify;
-	margin-right: 0%;
-	margin-left: auto;
-	padding-left: 2%;
-	padding-right: 0%;
+	.onePost:nth-child(odd){
+		text-align: justify;
+		margin-right: 0%;
+		margin-left: auto;
+		padding-left: 2%;
+		padding-right: 0%;
 
-			.comment-posted-by, .links{
+		.comment-posted-by, .links, .post-posted-by{
 			text-align: right; 
-			}
+		}
+		h4, form{
+			text-align: left;
+		}
 	}
 	>h3:first-child{
 		display: none;
 	}
 	.reply-to-msg {
-	margin-top: 40px;
-	margin-bottom: 20px;
-	padding-top: 10px;
-	padding-bottom: 20px;
-	/*border-top: 1px solid #e6e6e6;
-	border-bottom: 1px solid #e6e6e6;*/
+		margin-top: 40px;
+		margin-bottom: 20px;
+		padding-top: 10px;
+		padding-bottom: 20px;
+		/*border-top: 1px solid #e6e6e6;
+		border-bottom: 1px solid #e6e6e6;*/
 	}
 }
 
@@ -350,27 +354,21 @@ input[value="Registrieren"]{
 
 
 
-/* Comment styles */
-
-.comment {
+/* Post styles */
+.post {
 	border-bottom: 1px solid #fff;
 	padding-top: 15px;
 	padding-bottom: 15px;
 
-	.comment-content {
+	.post-content {
 		font-size: 1.25em;
 	}	
-
-	.comment-posted-by {
-		color: #b2b2b1;
-		font-size: 0.8em;
-	}
 
 	.links {
 		margin-top: 15px;
 		a {
 			color: #fd0243;
-			margin-right: 15px;
+			margin-right: 0px;
 		}
 	}
 	.reply-to-msg{
@@ -378,5 +376,28 @@ input[value="Registrieren"]{
 		border-top: 1px solid #f2f2f2;
 		padding-bottom: 20px;
 		border-bottom: 1px solid #f2f2f2;
+	}
+	.post-posted-by{
+		color: #b2b2b1;
+		font-size: 0.8em;
+	}
+}
+
+
+
+/* Comment styles */
+
+.comments{
+	font-size: 95%;
+	color: grey;
+	margin-left: 5%;
+
+	.comment-posted-by {
+		color: #b2b2b1;
+		font-size: 0.8em;
+	}
+	.links{
+		margin-top: 5px;
+		margin-bottom: 25px;
 	}
 }

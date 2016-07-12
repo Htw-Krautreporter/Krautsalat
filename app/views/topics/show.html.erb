@@ -23,14 +23,19 @@ function hide(){
 	<div class="topic-show">
 		<h3>Beiträge:</h3>
 		<% @posts.each do |post| %>
+		<div class="onePost">
 			<%= render post %>
 
+			<div class = "comments">
 			<h4>Kommentare:</h4>
 			<%= render post.comments %>
 
-			<h4>Beitrag kommentieren</h4>
+			<!--<h4>Beitrag kommentieren</h4>-->
 			<% @post = post %>
 			<%= render 'comments/form' %>
+			</div>
+
+		</div>
 
 		<% end %>
 
