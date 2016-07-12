@@ -2,16 +2,22 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class="topic-show">
 		<h2><%=  best_in_place @topic, :title %></h2>
-		<%= @topic %> <%= :title %>
 		<p class="topic-posted-by">Verfasst von <%= @topic.user.username %> am <%= time_string(@topic.created_at) %>.</p>
 
 		<p>Hinzugefügte Nutzer:
 		<% @topic.users.each do |user| %>
-		<%= " #{user.email}" %>
+			<%= " #{user.email}" %>
 		<% end %>
 		</p>
 		
-		<p class="topic-desc"><%= @topic.description %></p>
+		<% if current_user.admin || user_signed_in? && @topic.user_id == current_user.id %>
+			<p><%=  best_in_place @topic, :description, :type => :textarea, :activator => "#topic-desc" %></p>
+				<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "topic-desc" %>
+		<% else %>
+			<p class="topic-desc"><%= @topic.description %></p>
+		<% end %>
+
+
 
 		<h3>Beiträge:</h3>
 		<% @posts.each do |post| %>
