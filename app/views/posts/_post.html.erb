@@ -1,8 +1,8 @@
 <div class="comment">	
 		<% if user_signed_in? && post.user_id == current_user.id %>
-			<%=  best_in_place [post.topic, post], :content, :type => :textarea, :activator => "#post-desc" %>
+			<%=  best_in_place [post.topic, post], :content, :type => :textarea, :activator => "#post-desc-#{post.id}" %>
 			<div class="links">
-				<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "post-desc" %>
+				<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "post-desc-#{post.id}" %>
 				<%= link_to "Löschen", topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
 			</div>
 		<% else %>

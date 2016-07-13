@@ -1,11 +1,11 @@
 <% post = Post.find(comment.post_id) %>
 
 	<% if user_signed_in? && comment.user_id == current_user.id %>
-		<%=  best_in_place [post.topic, post, comment], :content, :type => :textarea, :activator => "#comment-desc" %>
+		<%=  best_in_place [post.topic, post, comment], :content, :type => :textarea, :activator => "#comment-desc-#{post.id}-#{comment.id}" %>
 		<!--  :html_attrs => { :cols => '5000', :rows => '1' } -->
 		
 			<div class="links">
-			<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "comment-desc" %>
+			<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "comment-desc-#{post.id}-#{comment.id}" %>
 			<%= link_to "Löschen", topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Kommentar? wirklich löschen?" } %>
 			</div>
 	<% else %>
