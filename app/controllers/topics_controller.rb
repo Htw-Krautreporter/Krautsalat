@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-	before_action :find_topic, only: [:show, :edit, :update, :destroy, :manage_users, :invite_user, :invite_all_filtered_users]
+	before_action :find_topic, only: [:show, :edit, :update, :destroy, :manage_users, :invite_user, :invite_all_filtered_users, :disinvite_user]
 	before_action :find_posts, only: [:show]
 	before_action :authenticate_user!
 
@@ -66,6 +66,12 @@ class TopicsController < ApplicationController
 			user = User.find(user_id)
 			@topic.users << user unless @topic.users.include?(user)
 		end
+		save_users_and_redirect(@topic)
+	end
+
+	def disinvite_user
+		user = User.find(params[:user_id])
+		@topic.users.delete(user)
 		save_users_and_redirect(@topic)
 	end
 

@@ -3,6 +3,8 @@
 <h3>Hinzugefügte User</h3>
 <% @related_users.each do |user| %>
 	<p><%= user.username %></p>
+	<%= link_to "Entfernen", disinvite_user_path(user_id: user.id), method: :post, class: "btn btn-default" %>
+
 <% end %>
 
 <h3>User hinzufügen</h3>
