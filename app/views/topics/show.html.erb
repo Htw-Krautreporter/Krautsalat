@@ -4,13 +4,9 @@
 		<h2><%= @topic.title %></h2>
 		<p class="topic-posted-by">Verfasst von <%= @topic.user.username %> am <%= time_string(@topic.created_at) %>.</p>
 
-		<p>Hinzugefügte Nutzer:
-		<% @topic.users.each do |user| %>
-		<%= " #{user.username}" %>
+		<% if current_user.admin || user_signed_in? && @topic.user_id == current_user.id %>
+			<%= link_to "Benutzer verwalten", manage_users_path, class: "btn btn-default" %>
 		<% end %>
-		</p>
-
-		<%= link_to "User ein-/ausladen", manage_users_path, class: "btn btn-default" %>
 		
 		<p class="topic-desc"><%= @topic.description %></p>
 
