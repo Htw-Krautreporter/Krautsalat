@@ -21,4 +21,3 @@ topic2 = Topic.create(
 	title: "Bla Bla",
 	description: "But you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you.",
 	user: admin)
-

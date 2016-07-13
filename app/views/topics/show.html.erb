@@ -19,8 +19,14 @@ function hide(){
 		<span class="glyphicon glyphicon-menu-up" id="upbutton" onclick="hide()" style="display: none"></span>
 	</div>
 
-	<div class="topic-desc" id="topic-description"><%= @topic.description %></div>
+	<div class="topic-desc" id="topic-description">
+		<%= @topic.description %><br>
+		<% if current_user.admin || @topic.user_id == current_user.id %>
+			<%= link_to "Benutzer verwalten", manage_users_path, class: "btn btn-default" %>
+		<% end %>
+	</div>
 	<div class="topic-show">
+
 		<h3>Beiträge:</h3>
 		<% @posts.each do |post| %>
 			<%= render post %>
@@ -42,7 +48,7 @@ function hide(){
 		<div class="links-btn-group">
 
 			<%= link_to "Zurück", topics_path, class: "btn btn-default" %>
-			<% if current_user.admin || user_signed_in? && @topic.user_id == current_user.id %>
+			<% if current_user.admin || @topic.user_id == current_user.id %>
 				<%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
 				<%= link_to "Löschen", topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie das Thema wirklich löschen?" } %>
 			<% end %>
