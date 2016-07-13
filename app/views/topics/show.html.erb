@@ -13,24 +13,38 @@ function hide(){
 
 <div class="container chat">
 	<div class="topic-show-head">
-		<h2 class="topic-show-title"><%= @topic.title %></h2>
+		<h2 class="topic-show-title">
+		<% if current_user.admin || @topic.user_id == current_user.id %>
+			<%= best_in_place @topic, :title %>
+		<% else %>
+			<%= @topic.title %>
+		<% end %>
+		</h2>
+		
 		<p class="topic-posted-by">Verfasst von <%= @topic.user.username %> am <%= time_string(@topic.created_at) %>.</p>
 		<span class="glyphicon glyphicon-menu-down" id="downbutton" onclick="show()"></span>
 		<span class="glyphicon glyphicon-menu-up" id="upbutton" onclick="hide()" style="display: none"></span>
 	</div>
 
 	<div class="topic-desc" id="topic-description">
-		<%= @topic.description %><br>
+		<% if current_user.admin || @topic.user_id == current_user.id %>
+			<p><%=  best_in_place @topic, :description, :type => :textarea, :activator => "#topic-desc-edit" %></p>
+			<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "topic-desc-edit" %>
+		<% else %>
+			<p><%= @topic.description %></p>
+		<% end %>
+
 		<% if current_user.admin || @topic.user_id == current_user.id %>
 			<%= link_to "Benutzer verwalten", manage_users_path, class: "btn btn-default" %>
 		<% end %>
 	</div>
 	<div class="topic-show">
+	
 
 		<h3>Beiträge:</h3>
 		<% @posts.each do |post| %>
 			<%= render post %>
-
+			
 			<h4>Kommentare:</h4>
 			<%= render post.comments %>
 

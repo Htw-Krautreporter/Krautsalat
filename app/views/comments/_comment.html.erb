@@ -1,10 +1,15 @@
-<p><%= comment.content %></p>
-<p>Verfasst von <%= comment.user.email %> am <%= time_string(comment.created_at) %>.</p>
+<% post = Post.find(comment.post_id) %>
 
-<div class="links">
 	<% if user_signed_in? && comment.user_id == current_user.id %>
-		<% post = Post.find(comment.post_id) %>
-		<%= link_to "Bearbeiten", edit_topic_post_comment_path(post.topic, post, comment), class: "btn btn-default" %>
-		<%= link_to "Löschen", topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Kommentar? wirklich löschen?" } %>
+		<%=  best_in_place [post.topic, post, comment], :content, :type => :textarea, :activator => "#comment-desc-#{post.id}-#{comment.id}" %>
+		<!--  :html_attrs => { :cols => '5000', :rows => '1' } -->
+		
+			<div class="links">
+			<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "comment-desc-#{post.id}-#{comment.id}" %>
+			<%= link_to "Löschen", topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Kommentar? wirklich löschen?" } %>
+			</div>
+	<% else %>
+		<p><%= comment.content %></p>
 	<% end %>
-</div>
+<p><%= signature_string(comment.user.username, comment.created_at, comment.updated_at) %>
+</p>
