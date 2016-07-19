@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
 		:recoverable, :rememberable, :trackable, :validatable
 
 	def self.search(search)
-		where("email LIKE ? OR username LIKE ?", "%#{search}%", "%#{search}%")
+		where("email LIKE ? OR username LIKE ? OR expertise LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
 	end
 end
