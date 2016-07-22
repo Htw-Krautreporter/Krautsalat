@@ -13,32 +13,39 @@
  *= require_self
  *= require_tree .
  */
-@import url(http://fonts.googleapis.com/css?family=Playfair+Display|Muli:300,400);
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 
 /* General styles */
 
 body {
-	background-color: #f2f2f2;
-	font-family: 'Minion Pro', serif;
+	background-color: #fff;
+	font-family: 'Tisa Sans', sans-serif;
 }
 textarea, input{
-	font-family: 'Muli', sans-serif;
+	font-family: 'Tisa Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Muli', sans-serif;
+	font-family: 'Cqwxmrhvtmtvdcekacigyihmahc';
+	font-weight: 300;	
+}
+h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
+	font-family: 'Cqwxmrhvtmtvdcekacigyihmahc';
 	font-weight: 300;	
 }
 
 .navbar{
 	margin-bottom: 0px;
 }
+.container{
+	width: 77%;
+}
 .alert, .notice{
 	text-align: center;
 	vertical-align: middle;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Tisa Sans', sans-serif;
 }
 
 h1{
@@ -49,7 +56,7 @@ h1{
 .btn-custom {
 	background-color: #fff;
 	color: #fd0243;
-	font-family: 'Muli', sans-serif; 
+	font-family: 'Tisa Sans', sans-serif; 
 	font-weight: 300;
 	border-radius: 8px;
 	padding: 10px 20px;
@@ -83,27 +90,50 @@ h1{
 /* Navbar styles */
 
 .navbar {
-	font-family: 'Muli', sans-serif;
+	font-family: 'Tisa Sans', sans-serif;
 	text-transform: uppercase;
 }
 
 .navbar-default {
-
-	padding-top: 5px;
-	padding-bottom: 5px;
 	background-color: #fff;
 
-	.navbar-nav > li > a {
-		color: #222;
+	.navbar-brand{
+		background-color: #e91d45;
+		border: 1.5px solid #e91d45;
+		text-align: center;
+		color: white;
+		line-height: 1.5;
+		height: auto;
+		font-size: 1.1em;
+		margin: 15px 0px;
+		font-weight: 700;
+		margin-left: -45% !important;
+		padding: 1em 1.7em;
 	}
-
+	.navbar-brand:hover{
+		background-color: #c01335;
+		border: 1.5px solid #c01335;
+		color: white;
+	}
+	.navbar-nav{
+		margin: 15px;
+		margin-left: -5%;
+	}
 	.navbar-link {
 		color: #222;
 	}
-
-	.navbar-brand {
-		color: #222;
-		letter-spacing: 1.1px;
+	.navbar-right{
+		color: #e91d45;
+		border: 1.5px solid #fd0243;
+		padding: 1em 1.7em;
+		font-weight: 700;
+		font-size: 1.1em;
+		margin-right: -5%;
+	}
+	.navbar-right:hover{
+		color: #c01335;
+		border: 1.5px solid #c01335;
+		text-decoration: none;
 	}
 
 }
@@ -132,19 +162,16 @@ h1{
 	box-sizing: border-box;
 	background-color: #fff;
 	margin-bottom: 25px;
-	margin-right: 10px;
-	margin-left: 10px;
 	padding: 1.4em 1.4em;
-	height: 150px;
-	border-bottom: 4px solid #fd0243;
+	height: 200px;
+	border: 1px solid #e7e7e7;
+	border-bottom: 3px solid #e91d45;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	word-wrap: break-word;
 
 	.topic-title, .topic-title a {
 		font-size: 1.3em;
-		font-family: 'Muli', sans-serif;
-		font-weight: 300;
 		margin-top: 0;
 		color: black;
 		margin-bottom: 3%;
@@ -160,7 +187,9 @@ h1{
 		text-overflow: ellipsis;
 	}
 	.topic-author{
-		height: 1em;
+		height: 1.5em;
+		color: #aaadb0;
+		text-transform: uppercase;
 	}
 
 	.btn-custom {
@@ -171,8 +200,11 @@ h1{
 }
 .topic:hover{
 	.topic-title a{
-		color: #fd0243;
+		color: #e91d45;
 	}
+	box-shadow:8px 8px 25px 0 rgba(187,187,187,0.3);
+	-webkit-transform:scale(1.03);
+	transform:scale(1.03)
 }
 
 
@@ -190,56 +222,64 @@ h1{
 	padding: 2.0em 3em;
 	border-bottom: 4px solid #fd0243;
 	color: #black;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Tisa Sans', sans-serif;
 	font-weight: 300;
 
 	h2 {
 		margin-top: 0%;
 		color: #fd0243;
-		margin-bottom: 0px;
+		margin-bottom: 1%;
 		font-weight: bold;
 	}
-	.topic-posted-by {
-		font-size: 0.9em;
-		color: #b2b2b1;
+
+	.topic-posted-by, .topic-posted-at{
+		text-transform: uppercase;
+		color: #aaadb0;
+		text-align: center;
+	}
+	.topic-posted-at{
 		width: 80%;
 		margin-left: 10%;
 		float: left;
 	}
-	.comment{
-	width: 90%;
-	margin: 3% 0%;
-	border-bottom: 1px solid #c6c6c6;
-	padding-right: 2%;
-	text-align: justify;
+	.onePost{
+		width: 90%;
+		margin: 3% 0%;
+		border-bottom: 1px solid #c6c6c6;
+		padding-right: 2%;
+		padding-bottom: 3%;
+		text-align: justify;
 	}
-	.comment:nth-child(odd){
-	text-align: justify;
-	margin-right: 0%;
-	margin-left: auto;
-	padding-left: 2%;
-	padding-right: 0%;
+	.onePost:nth-child(odd){
+		text-align: justify;
+		margin-right: 0%;
+		margin-left: auto;
+		padding-left: 2%;
+		padding-right: 0%;
 
-			.comment-posted-by, .links{
+		.comment-posted-by, .links, .post-posted-by{
 			text-align: right; 
-			}
+		}
+		h4, form{
+			text-align: left;
+		}
 	}
 	>h3:first-child{
 		display: none;
 	}
 	.reply-to-msg {
-	margin-top: 40px;
-	margin-bottom: 20px;
-	padding-top: 10px;
-	padding-bottom: 20px;
-	/*border-top: 1px solid #e6e6e6;
-	border-bottom: 1px solid #e6e6e6;*/
+		margin-top: 40px;
+		margin-bottom: 20px;
+		padding-top: 10px;
+		padding-bottom: 20px;
+		/*border-top: 1px solid #e6e6e6;
+		border-bottom: 1px solid #e6e6e6;*/
 	}
 }
 
 
 .topic-show-head{
-	height: 80px;
+	line-height: 1.5em;
 	background-color: white;
 	vertical-align: middle;
 	text-align: center;
@@ -260,8 +300,8 @@ h1{
 		height: auto;
 		background-color: white;
 		z-index: 5;
-		font-family: 'Muli', sans-serif;
-		font-weight: 300;
+		font-family: 'Tisa Sans', sans-serif;
+		font-weight: 700;
 		color: #7d7d7d;
 		font-style: italic;
 		display: none;
@@ -280,7 +320,7 @@ h1{
 }
 
 .form-inputs label{
-	font-family: 'Muli', sans-serif;
+	font-family: 'Tisa Sans', sans-serif;
 	margin-left: 20%;
 }
 .form-inputs .help-block{
@@ -297,7 +337,7 @@ h1{
 	margin-bottom: 2%;
 }
 .edit_post label, .edit_topic label, .topic_title label, .topic_description label{
-	font-family: 'Muli', sans-serif;
+	font-family: 'Tisa Sans', sans-serif;
 }
 
 
@@ -318,7 +358,7 @@ input[id="user_remember_me"]{
 	/*margin-left: 20%;*/
 	/*display: block;*/
 	margin: 0 auto;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Tisa Sans', sans-serif;
 	font-variant: small-caps;
 }
 .btn-bottom[value="Speichern"]{
@@ -338,7 +378,7 @@ input[value="Registrieren"]{
 }
 #register, #forgot, #log{
 	color: #a4a4a4;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Tisa Sans', sans-serif;
 	font-size: 12px;
 }
 
@@ -350,27 +390,21 @@ input[value="Registrieren"]{
 
 
 
-/* Comment styles */
-
-.comment {
+/* Post styles */
+.post {
 	border-bottom: 1px solid #fff;
 	padding-top: 15px;
 	padding-bottom: 15px;
 
-	.comment-content {
+	.post-content {
 		font-size: 1.25em;
 	}	
-
-	.comment-posted-by {
-		color: #b2b2b1;
-		font-size: 0.8em;
-	}
 
 	.links {
 		margin-top: 15px;
 		a {
 			color: #fd0243;
-			margin-right: 15px;
+			margin-right: 0px;
 		}
 	}
 	.reply-to-msg{
@@ -378,5 +412,28 @@ input[value="Registrieren"]{
 		border-top: 1px solid #f2f2f2;
 		padding-bottom: 20px;
 		border-bottom: 1px solid #f2f2f2;
+	}
+	.post-posted-by{
+		color: #b2b2b1;
+		font-size: 0.8em;
+	}
+}
+
+
+
+/* Comment styles */
+
+.comments{
+	font-size: 95%;
+	color: grey;
+	margin-left: 5%;
+
+	.comment-posted-by {
+		color: #b2b2b1;
+		font-size: 0.8em;
+	}
+	.links{
+		margin-top: 5px;
+		margin-bottom: 25px;
 	}
 }
