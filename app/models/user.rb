@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable,
 		:recoverable, :rememberable, :trackable, :validatable
 
+	validates :username, uniqueness: true
+
 	def self.search(search)
 		where("email LIKE ? OR username LIKE ? OR expertise LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
 	end
