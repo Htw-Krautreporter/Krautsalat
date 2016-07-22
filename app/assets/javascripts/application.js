@@ -18,6 +18,6 @@
 //= require turbolinks
 //= require_tree .
 
-function clicked(id) {
+function disableButton(id) {
 	document.getElementById(id).disabled = true;
 }

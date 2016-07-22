@@ -28,8 +28,8 @@ function hide(){
 
 	<div class="topic-desc" id="topic-description">
 		<% if current_user.admin || @topic.user_id == current_user.id %>
-			<p><%=  best_in_place @topic, :description, :type => :textarea, :activator => "#topic-desc-edit" %></p>
-			<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "topic-desc-edit" %>
+			<p><%=  best_in_place @topic, :description, :type => :textarea, :activator => "#topic-desc-edit", :ok_button => "Speichern", :ok_button_class => "btn btn-default", :cancel_button => "Abbrechen", :cancel_button_class => "btn btn-default" %></p>
+			<%= button_to "Bearbeiten", "#", class: "btn btn-default", id: "topic-desc-edit", onClick: "disableButton(\"topic-desc-edit\")"  %>
 		<% else %>
 			<p><%= @topic.description %></p>
 		<% end %>
