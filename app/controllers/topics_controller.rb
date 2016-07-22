@@ -63,4 +63,6 @@ class TopicsController < ApplicationController
 			@posts = Post.where("topic_id = ?", params[:id])
 		end
 
+		
+
 end
