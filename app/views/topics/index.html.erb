@@ -15,8 +15,8 @@
 	<% @topics.each do |topic| %>
 	<div class="col-md-4">
 		<div class="topic">
+			<p class="topic-author"><%= topic.user.username %></p>
 			<h2 class="topic-title"><%= link_to topic.title, topic_path(topic) %></h2>
-			<p class="topic-author">Erstellt von <%= topic.user.username %></p>
 		</div>
 	</div>
 	<% end %>
