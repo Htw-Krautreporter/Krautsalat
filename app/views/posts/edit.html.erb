@@ -1,0 +1,5 @@
+<h1 class="hCenter">Beitrag bearbeiten</h1>
+<%= simple_form_for([@topic, @post]) do |f| %>
+	<%= f.input :content, label: "Beitrag" %>
+	<%= f.button :submit, value: "Speichern", class: "btn-special" %>
+<% end %>

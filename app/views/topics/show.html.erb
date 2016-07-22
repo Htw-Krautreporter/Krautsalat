@@ -1,0 +1,79 @@
+<script language="javascript" type="text/javascript">
+function show(){
+	document.getElementById("downbutton").style.display = 'none';
+	document.getElementById("upbutton").style.display = 'block';
+	document.getElementById("topic-description").style.display ='block';
+}
+function hide(){
+	document.getElementById("downbutton").style.display = 'block';
+	document.getElementById("upbutton").style.display = 'none';
+	document.getElementById("topic-description").style.display = 'none';
+}
+</script>
+
+<div class="container chat">
+	<div class="topic-show-head">
+		<p class="topic-posted-by"><%= @topic.user.username %></p>
+		<h2 class="topic-show-title">
+		<% if current_user.admin || @topic.user_id == current_user.id %>
+			<%= best_in_place @topic, :title %>
+		<% else %>
+			<%= @topic.title %>
+		<% end %>
+		</h2>
+		<p class="topic-posted-at"><%= time_string(@topic.created_at) %></p>
+		
+		<span class="glyphicon glyphicon-menu-down" id="downbutton" onclick="show()"></span>
+		<span class="glyphicon glyphicon-menu-up" id="upbutton" onclick="hide()" style="display: none"></span>
+	</div>
+
+	<div class="topic-desc" id="topic-description">
+		<% if current_user.admin || @topic.user_id == current_user.id %>
+			<p><%=  best_in_place @topic, :description, :type => :textarea, :activator => "#topic-desc-edit" %></p>
+			<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "topic-desc-edit" %>
+		<% else %>
+			<p><%= @topic.description %></p>
+		<% end %>
+
+		<% if current_user.admin || @topic.user_id == current_user.id %>
+			<%= link_to "Benutzer verwalten", manage_users_path, class: "btn btn-default" %>
+		<% end %>
+	</div>
+	<div class="topic-show">
+	
+
+		<h3>Beiträge:</h3>
+		<% @posts.each do |post| %>
+		<div class="onePost">
+			<%= render post %>
+
+			<div class = "comments">
+
+			<h4>Kommentare:</h4>
+			<%= render post.comments %>
+
+			<!--<h4>Beitrag kommentieren</h4>-->
+			<% @post = post %>
+			<%= render 'comments/form' %>
+			</div>
+
+		</div>
+
+		<% end %>
+
+		<div class="reply-to-msg">
+		<h3>Beitrag hinzufügen:</h3>
+		<%= render 'posts/form' %>
+		</div>
+
+		<div class="links-btn-group">
+
+			<%= link_to "Zurück", topics_path, class: "btn btn-default" %>
+			<% if current_user.admin || @topic.user_id == current_user.id %>
+				<%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
+				<%= link_to "Löschen", topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie das Thema wirklich löschen?" } %>
+			<% end %>
+		</div>
+	</div>
+</div>
+

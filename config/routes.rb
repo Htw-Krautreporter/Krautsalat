@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
- # get 'main/index'
+  devise_for :users
 
+  resources :topics do
+    resources :posts do
+      resources :comments
+    end
+  end
 
-  root 'main#index'
+  get 'topics/:id/manage_users' => 'topics#manage_users', as: "manage_users"
+  post 'topics/:id/manage_users/invite' => 'topics#invite_user', as: "invite_user"
+  post 'topics/:id/manage_users/invite_all' => 'topics#invite_all_filtered_users', as: "invite_all_filtered_users"
+  post 'topics/:id/manage_users/disinvite' => 'topics#disinvite_user', as: "disinvite_user"
 
+  root 'topics#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

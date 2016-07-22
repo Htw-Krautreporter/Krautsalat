@@ -1,0 +1,13 @@
+<div class="post">
+		<% if user_signed_in? && post.user_id == current_user.id %>
+			<p class="post-content"><%=  best_in_place [post.topic, post], :content, :type => :textarea, :activator => "#post-desc-#{post.id}" %></p>
+			<p class="post-posted-by"> <%= signature_string(post.user.username, post.created_at, post.updated_at) %></p>
+			<div class="links">
+				<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "post-desc-#{post.id}" %>
+				<%= link_to "Löschen", topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
+			</div>
+		<% else %>
+			<p class="post-content"><%= post.content %></p>
+			<p class="post-posted-by"> <%= signature_string(post.user.username, post.created_at, post.updated_at) %></p>
+		<% end %>
+</div>
