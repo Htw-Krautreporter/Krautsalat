@@ -18,4 +18,6 @@
 //= require turbolinks
 //= require_tree .
 
-
+function clicked(id) {
+	document.getElementById(id).disabled = true;
+}
