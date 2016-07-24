@@ -15,11 +15,7 @@ function hide(){
 	<div class="topic-show-head">
 		<p class="topic-posted-by"><%= @topic.user.username %></p>
 		<h2 class="topic-show-title">
-		<% if current_user.admin || @topic.user_id == current_user.id %>
-			<%= best_in_place @topic, :title %>
-		<% else %>
 			<%= @topic.title %>
-		<% end %>
 		</h2>
 		<p class="topic-posted-at"><%= time_string(@topic.created_at) %></p>
 		
@@ -28,11 +24,9 @@ function hide(){
 	</div>
 
 	<div class="topic-desc" id="topic-description">
+	<p><%= @topic.description.gsub(/\n/, '<br/>').html_safe %></p>
 		<% if current_user.admin || @topic.user_id == current_user.id %>
-			<p><%=  best_in_place @topic, :description, :type => :textarea, :activator => "#topic-desc-edit" %></p>
-			<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "topic-desc-edit" %>
-		<% else %>
-			<p><%= @topic.description %></p>
+			<%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
 		<% end %>
 
 		<% if current_user.admin || @topic.user_id == current_user.id %>
@@ -70,7 +64,6 @@ function hide(){
 
 			<%= link_to "Zurück", topics_path, class: "btn btn-default" %>
 			<% if current_user.admin || @topic.user_id == current_user.id %>
-				<%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
 				<%= link_to "Löschen", topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie das Thema wirklich löschen?" } %>
 			<% end %>
 		</div>

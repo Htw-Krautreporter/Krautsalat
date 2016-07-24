@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-	respond_to :html, :json
 	before_action :find_parents
 	before_action :find_comment, only: [:edit, :update, :destroy]
 
@@ -15,8 +14,7 @@ class CommentsController < ApplicationController
 
 	def update
 		if @comment.update(comment_params)
-			respond_with @comment
-			#redirect_to topic_path(@topic)
+			redirect_to topic_path(@topic)
 		else
 			render 'edit'
 		end

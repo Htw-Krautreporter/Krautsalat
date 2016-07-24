@@ -1,5 +1,4 @@
 class TopicsController < ApplicationController
-	respond_to :html, :json
 	before_action :find_topic, only: [:show, :edit, :update, :destroy, :manage_users, :invite_user, :invite_all_filtered_users, :disinvite_user]
 	before_action :find_posts, only: [:show]
 	before_action :authenticate_user!
@@ -39,7 +38,7 @@ class TopicsController < ApplicationController
 
 	def update
 		if @topic.update(topic_params)
-			respond_with @topic
+			redirect_to topic_path
 		else
 			render 'edit'
 		end
