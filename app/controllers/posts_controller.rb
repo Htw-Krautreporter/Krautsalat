@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update(post_params)
-			respond_with @post
+			redirect_to topic_path(@topic)
 		else
 			render 'edit'
 		end

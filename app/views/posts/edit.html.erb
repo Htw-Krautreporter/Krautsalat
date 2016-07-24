@@ -1,5 +1,6 @@
-<h1 class="hCenter">Beitrag bearbeiten</h1>
+<h2 class="hCenter">Beitrag bearbeiten</h2>
 <%= simple_form_for([@topic, @post]) do |f| %>
 	<%= f.input :content, label: "Beitrag" %>
 	<%= f.button :submit, value: "Speichern", class: "btn-special" %>
+	<%= button_to "Abbrechen", :back, class: "btn btn-default btn-special" %>
 <% end %>

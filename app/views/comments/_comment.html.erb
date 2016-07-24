@@ -1,19 +1,15 @@
 <% post = Post.find(comment.post_id) %>
 <div class="comment">
 	
-		<% if user_signed_in? && comment.user_id == current_user.id %>
-			<p class="comment-content"><%=  best_in_place [post.topic, post, comment], :content, :type => :textarea, :activator => "#comment-desc-#{post.id}-#{comment.id}" %></p>
-			<p class="comment-posted-by"><%= signature_string(comment.user.username, comment.created_at, comment.updated_at) %></p>
-			<!--  :html_attrs => { :cols => '5000', :rows => '1' } -->
-			
-				<div class="links">
-				<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "comment-desc-#{post.id}-#{comment.id}" %>
-				<%= link_to "Löschen", topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Kommentar? wirklich löschen?" } %>
-				</div>
-		<% else %>
-			<p class="comment-content"><%= comment.content %></p>
-			<p class="comment-posted-by"><%= signature_string(comment.user.username, comment.created_at, comment.updated_at) %></p>
-		<% end %>
+	<p class="comment-content"><%= comment.content %></p>
+	<p class="comment-posted-by"><%= signature_string(comment.user.username, comment.created_at, comment.updated_at) %></p>
+
+	<% if current_user.admin || comment.user_id == current_user.id %>
+		<div class="links">
+		<%= link_to "Bearbeiten", edit_topic_post_comment_path(post.topic, post, comment), class: "btn btn-default" %>
+		<%= link_to "Löschen", topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Kommentar? wirklich löschen?" } %>
+		</div>
+	<% end %>
 	
 </div>
 

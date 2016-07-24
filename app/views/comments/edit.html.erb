@@ -1,5 +1,6 @@
-<h1>Kommentar bearbeiten</h1>
+<h2 class="hCenter">Kommentar bearbeiten</h2>
 <%= simple_form_for([@topic, @post, @comment]) do |f| %>
 	<%= f.input :content, label: "Kommentar" %>
-	<%= f.button :submit %>
+	<%= f.button :submit, value: "Speichern", class: "btn-special" %>
+	<%= button_to "Abbrechen", :back, class: "btn btn-default btn-special" %>
 <% end %>
