@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
 
 	def index
 		@own_topics  = Topic.where(user_id: current_user.id).order("created_at DESC")
-		if current_user.admin?
+		if current_user.rights == 2
 			@topics = Topic.all.order("created_at DESC")
 		else
 			@topics = current_user.topics.order("created_at DESC")
@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
 	end
 
 	def show
-		unless current_user == @topic.user || current_user.admin? || @topic.users.include?(current_user)
+		unless current_user == @topic.user || current_user.rights == 2 || @topic.users.include?(current_user)
 			redirect_to topics_path
 		end
 	end
