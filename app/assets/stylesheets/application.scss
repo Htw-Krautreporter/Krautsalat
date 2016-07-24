@@ -171,13 +171,13 @@ h1{
 	word-wrap: break-word;
 
 	.topic-title, .topic-title a {
-		font-size: 1.3em;
+		font-size: 1.7em;
 		margin-top: 0;
 		color: black;
 		margin-bottom: 3%;
 		text-decoration: none;
-		height: 1.5em;
-		overflow: hidden;
+		height: auto;
+		overflow: auto;
 		text-overflow: ellipsis;
 	}
 
@@ -199,12 +199,16 @@ h1{
 
 }
 .topic:hover{
-	.topic-title a{
+	.topic-title{
 		color: #e91d45;
 	}
 	box-shadow:8px 8px 25px 0 rgba(187,187,187,0.3);
 	-webkit-transform:scale(1.03);
 	transform:scale(1.03)
+}
+
+.col-md-4 a:hover{
+	text-decoration: none;
 }
 
 
@@ -437,3 +441,5 @@ input[value="Registrieren"]{
 		margin-bottom: 25px;
 	}
 }
+
+
