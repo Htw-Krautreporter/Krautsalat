@@ -1,7 +1,7 @@
 <% post = Post.find(comment.post_id) %>
 <div class="comment">
 	
-	<p class="comment-content"><%= comment.content %></p>
+	<p class="comment-content"><%= comment.content.gsub(/\n/, '<br/>').html_safe %></p>
 	<p class="comment-posted-by"><%= signature_string(comment.user.username, comment.created_at, comment.updated_at) %></p>
 
 	<% if current_user.admin || comment.user_id == current_user.id %>

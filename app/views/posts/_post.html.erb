@@ -1,7 +1,6 @@
 <div class="post">
-		<p class="post-content"><%= post.content %></p>
+		<p class="post-content"><%= post.content.gsub(/\n/, '<br/>').html_safe %></p>
 		<p class="post-posted-by"> <%= signature_string(post.user.username, post.created_at, post.updated_at) %></p>
-
 		<% if current_user.admin || post.user_id == current_user.id %>
 			<div class="links">
 				<%= link_to "Bearbeiten", edit_topic_post_path(post.topic, post), class: "btn btn-default" %>
