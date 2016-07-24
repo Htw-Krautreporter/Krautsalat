@@ -68,13 +68,13 @@ h1{
 	}
 }
 .btn{
-	color: #fd0243;
+	color: #e91d45;
 }
 
 .btn:hover, .links .btn-default:hover{
 	transition: 0.5s;
 	color: #fff;
-	background-color: #fd0243;
+	background-color: #e91d45;
 }
 
 .chat{
@@ -442,4 +442,83 @@ input[value="Registrieren"]{
 	}
 }
 
+.center{
+	text-align: center;
+	margin: 0 auto;
+}
+.right{
+	text-align: right;
+	margin-right: 0px;
+	margin-left: auto;
+}
 
+
+
+
+
+/* Invite Users styles*/
+.manage_users{
+	text-align: center;
+	margin-bottom: 5%;
+}
+table{
+	width: 65%;
+	margin: 2% auto;
+	margin-bottom: 5%;
+	padding: 2% 0%;
+
+	tr{
+		width: 100%;
+		height: 4em;
+		margin: 1% 0%;
+		border-bottom: 1px solid #e7e7e7;
+		vertical-align: middle;
+	}
+	tr:first-child{
+		border-top: 1px solid #e7e7e7;
+	}
+	td{
+		width: 25%;
+
+		p{
+
+		}
+
+		
+		i{
+			display: block;
+			clear:both;
+			color: #aaadb0;
+		}
+	}
+	td:first-child{
+		vertical-align: bottom;
+		width: 75%;
+		text-align: left;
+	}
+}
+
+.manage_users h3{
+	margin-top: 5%;
+}
+.manage_users .btn{
+	min-width: 10%;
+}
+
+#search-form[action="manage_users"]{
+	text-align: center;
+	margin: 1% 0%;
+	margin-top: 2%;
+
+	#search{
+		width: 40%;
+		display: block;
+		text-align: center;
+		margin: 0 auto 1%;
+	}
+}
+
+#no_user{
+	display: block;
+	margin-top: 2%;
+}
