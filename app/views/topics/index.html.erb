@@ -20,6 +20,7 @@
 			<h2 class="topic-title"><%= link_to topic.title, topic_path(topic) %></h2>
 			<p class="topic-author">Erstellt von <%= topic.user.username %></p>
 			<p class="topic-author">Erstellt am <%= time_string(topic.created_at) %></p>
+			<p class="topic-author"><%= count_new_posts_and_comments(topic) %> neue Beiträge</p>
 		</div>
 	</div>
 	<% end %>

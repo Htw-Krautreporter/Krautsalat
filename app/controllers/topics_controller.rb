@@ -16,6 +16,13 @@ class TopicsController < ApplicationController
 		unless current_user == @topic.user || current_user.admin? || @topic.users.include?(current_user)
 			redirect_to topics_path
 		end
+		visit = Visit.where(:user_id => current_user.id, :topic_id => @topic.id).take
+		if visit == nil
+			visit = Visit.create(:visited_at => Time.now, :user_id => current_user.id, :topic_id => @topic.id)
+		else
+			visit.visited_at = Time.now
+		end
+		visit.save
 	end
 
 	def new
@@ -62,7 +69,5 @@ class TopicsController < ApplicationController
 		def find_posts
 			@posts = Post.where("topic_id = ?", params[:id])
 		end
-
-		
 
 end
