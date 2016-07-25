@@ -1,4 +1,7 @@
+<% new_id = "new-comment-#{@post.id}" %>
 <%= simple_form_for([@topic, @post, @post.comments.build]) do |f| %> 
-	<%= f.input :content, label: "Kommentar" %>
-	<%= f.button :submit, :class => 'btn btn-default' %>
+	<%= f.input :content, label: "Kommentar", input_html: { id: new_id } %>
+	<span onClick="appendImage('<%= new_id %>')" class="glyphicon glyphicon-picture"></span>
+	<span onClick="appendLink('<%= new_id %>')" class="glyphicon glyphicon-link glyphicon-form"></span>
+	<%= f.button :submit, "Kommentar absenden", :class => 'btn btn-default' %>
 <% end %>
