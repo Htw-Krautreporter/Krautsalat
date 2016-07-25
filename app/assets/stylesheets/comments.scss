@@ -17,4 +17,15 @@
 		margin-top: 5px;
 		margin-bottom: 25px;
 	}
+	h4{
+		cursor: pointer;
+		cursor: hand;
+	}
+}
+
+.all_comments{
+	display: none;
+	height: 20em;
+	overflow-y: scroll;
+	padding-right: 1%;
 }

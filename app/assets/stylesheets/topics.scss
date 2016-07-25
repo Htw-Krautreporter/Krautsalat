@@ -87,11 +87,6 @@
 		color: #aaadb0;
 		text-align: center;
 	}
-	.topic-posted-at{
-		width: 80%;
-		margin-left: 10%;
-		float: left;
-	}
 	.onePost{
 		width: 90%;
 		margin: 3% 0%;
@@ -100,22 +95,22 @@
 		padding-bottom: 3%;
 		text-align: justify;
 	}
-	.onePost:nth-child(odd){
+	.onePost:nth-child(even){
 		text-align: justify;
 		margin-right: 0%;
 		margin-left: auto;
 		padding-left: 2%;
 		padding-right: 0%;
 
-		.comment-posted-by, .links, .post-posted-by{
+		.comment-posted-by, .links, .post-posted-by, h4{
 			text-align: right; 
 		}
-		h4, form{
+		h4{
+			margin-right: 5%;
+		}
+		form{
 			text-align: left;
 		}
-	}
-	>h3:first-child{
-		display: none;
 	}
 	.reply-to-msg {
 		margin-top: 40px;
@@ -126,19 +121,22 @@
 		border-bottom: 1px solid #e6e6e6;*/
 	}
 }
+#posts{
+	height: 60em; 
+	overflow-y: scroll;
+	padding-right: 2%;
+}
 
 .topic-show-head{
 	line-height: 1.5em;
 	background-color: white;
 	vertical-align: middle;
 	text-align: center;
-	padding: 1%;
+	padding: 1em 0em;
 	border-bottom: 2px solid #fd0243;
 
-	#downbutton, #upbutton{
-		cursor: pointer;
-		cursor: hand;
-	}
+	cursor: pointer;
+	cursor: hand;
 }
 
 .topic-desc {
