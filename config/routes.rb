@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'topics/:id/manage_users/invite' => 'topics#invite_user', as: "invite_user"
   post 'topics/:id/manage_users/invite_all' => 'topics#invite_all_filtered_users', as: "invite_all_filtered_users"
   post 'topics/:id/manage_users/disinvite' => 'topics#disinvite_user', as: "disinvite_user"
+  post 'topics/:id/leave_topic' => 'topics#leave_topic', as: "leave_topic"
 
   root 'topics#index'
 

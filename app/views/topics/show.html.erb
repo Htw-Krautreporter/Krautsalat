@@ -28,6 +28,10 @@ function hide(){
 	</div>
 
 	<div class="topic-desc" id="topic-description">
+		<% if @topic.users.include?(current_user) %>
+			<%= link_to "Thema verlassen", leave_topic_path, method: :post, class: "btn btn-default", data: { confirm: "Möchten Sie das Thema wirklich unwiederruflich verlassen?" } %>
+		<% end %>
+
 		<% if current_user.admin || @topic.user_id == current_user.id %>
 			<p><%=  best_in_place @topic, :description, :type => :textarea, :activator => "#topic-desc-edit" %></p>
 			<%= link_to "Bearbeiten", "#", class: "btn btn-default", id: "topic-desc-edit" %>
@@ -62,8 +66,8 @@ function hide(){
 		<% end %>
 
 		<div class="reply-to-msg">
-		<h3>Beitrag hinzufügen:</h3>
-		<%= render 'posts/form' %>
+			<h3>Beitrag hinzufügen:</h3>
+			<%= render 'posts/form' %>
 		</div>
 
 		<div class="links-btn-group">

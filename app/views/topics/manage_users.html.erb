@@ -4,7 +4,6 @@
 <% @related_users.each do |user| %>
 	<p><%= user.username %> <i>"<%= user.expertise %>"</i></p>
 	<%= link_to "Entfernen", disinvite_user_path(user_id: user.id), method: :post, class: "btn btn-default" %>
-
 <% end %>
 <% if @related_users.empty? %>
 	<i>Keine Benutzer hinzugefügt</i>
