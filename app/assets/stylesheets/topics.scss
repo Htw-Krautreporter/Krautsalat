@@ -164,6 +164,25 @@
 }
 
 
+/* Icons in Headline */
+
+#icons{
+	text-align: center;
+}
+#icons_left{
+	float: left;
+	margin-left: 2%;
+	text-align: left;
+}
+#icons_right{
+	text-align: right;
+	float: right;
+	margin-right: 2%;
+}
+.no_display{
+	visibility: hidden;
+}
+
 
 
 /* Invite Users styles*/

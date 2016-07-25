@@ -1,53 +1,60 @@
-<script language="javascript" type="text/javascript">
-function showComments(changeStatus, given_id){
-
-	var changeArray = document.getElementsByClassName(changeStatus);
-	var commentElements = document.getElementsByClassName("comments");
-	var elementIndex = 0;
-
-	for(var i = 0; i < commentElements.length; i++){
-		if(commentElements[i].id == given_id){
-			elementIndex = i;
-		}
-	}
-
-	var toChange = changeArray[elementIndex];
-
-	if(toChange.style.display == 'block'){
-		toChange.style.display = 'none';
-	}
-	else{
-		toChange.style.display = 'block';
-	}
-}
-
-function show(elementID){
-	var toChange = document.getElementById(elementID);
-	if(toChange.style.display == 'block'){
-		toChange.style.display = 'none';
-	}
-	else{
-		toChange.style.display = 'block';
-	}
-}
-</script>
-
 <div class="container chat">
 	<div class="topic-show-head" onclick="show('topic-description')">
-		<p class="topic-posted-by"><%= @topic.user.username %></p>
+
+		<div id="icons">
+			<div id="icons_left">
+				<!-- Zurück -->
+				<%= link_to topics_path, class: "btn btn-default" do %>
+					<span class="glyphicon glyphicon-arrow-left"></span>
+				<% end %>
+
+				<!-- Zurück -->
+				<%= link_to topics_path, class: "btn btn-default no_display" do %>
+					<span class="glyphicon glyphicon-arrow-left"></span>
+				<% end %>
+
+				<!-- Zurück -->
+				<%= link_to topics_path, class: "btn btn-default no_display" do %>
+					<span class="glyphicon glyphicon-arrow-left"></span>
+				<% end %>
+			</div>
+
+			<div id="icons_right">
+				<!-- Thema verlassen -->
+
+				<!-- Benutzer verwalten -->
+				<% if current_user.admin || @topic.user_id == current_user.id %>
+					<%= link_to manage_users_path, class: "btn btn-default" do %>
+						<span class="glyphicon glyphicon-cog"></span>
+					<% end %>
+				<% end %>
+
+				<!-- Bearbeiten -->
+				<% if current_user.admin || @topic.user_id == current_user.id %>
+					<%= link_to edit_topic_path(@topic), class: "btn btn-default" do %>
+						<span class="glyphicon glyphicon-pencil"></span>
+					<% end %>
+				<% end %>
+
+				<!-- Löschen -->
+				<% if current_user.admin || @topic.user_id == current_user.id %>
+					<%= link_to topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie das Thema wirklich löschen?" } do %>
+						<span class="glyphicon glyphicon-remove"></span>
+					<% end %>
+				<% end %>
+			</div>
+
+			<p class="topic-posted-by"><%= @topic.user.username %></p>
+
+		</div>
+
+		
 		<h2 class="topic-show-title">
 			<%= @topic.title %>
 		</h2>
 		<p class="topic-posted-at"><%= time_string(@topic.created_at) %></p>
 		<div class="topic-desc" id="topic-description">
 			<p><%= @topic.description.gsub(/\n/, '<br/>').html_safe %></p>
-				<% if current_user.admin || @topic.user_id == current_user.id %>
-					<%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
-				<% end %>
-
-				<% if current_user.admin || @topic.user_id == current_user.id %>
-					<%= link_to "Benutzer verwalten", manage_users_path, class: "btn btn-default" %>
-				<% end %>
 		</div>
 	</div>
 
@@ -85,16 +92,8 @@ function show(elementID){
 		</div>
 
 		<div class="reply-to-msg">
-		<h3>Beitrag hinzufügen:</h3>
-		<%= render 'posts/form' %>
-		</div>
-
-		<div class="links-btn-group">
-
-			<%= link_to "Zurück", topics_path, class: "btn btn-default" %>
-			<% if current_user.admin || @topic.user_id == current_user.id %>
-				<%= link_to "Löschen", topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie das Thema wirklich löschen?" } %>
-			<% end %>
+			<h3>Beitrag hinzufügen:</h3>
+			<%= render 'posts/form' %>
 		</div>
 	</div>
 </div>
