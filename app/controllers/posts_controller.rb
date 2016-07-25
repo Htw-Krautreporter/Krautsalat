@@ -9,8 +9,12 @@ class PostsController < ApplicationController
 	def create
 		@post = @topic.posts.create(post_params)
 		@post.user_id = current_user.id
-		@post.save
-		redirect_to topic_path(@topic)
+		if @post.save
+			redirect_to topic_path(@topic)
+		else
+			#@post = @topic.posts.find(:content)
+			render 'topics/show'
+		end
 	end
 
 	def edit
