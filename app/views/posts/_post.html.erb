@@ -3,9 +3,7 @@
 	<p class="post-posted-by"> <%= signature_string(post.user.username, post.created_at, post.updated_at) %></p>
 	<% if current_user.rights >= 1 || post.user_id == current_user.id %>
 		<div class="links">
-			<% if post.user_id == current_user.id %>
-				<%= link_to "Bearbeiten", edit_topic_post_path(post.topic, post), class: "btn btn-default" %>
-			<% end %>
+			<%= link_to "Bearbeiten", edit_topic_post_path(post.topic, post), class: "btn btn-default" %>
 			<%= link_to "Löschen", topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
 		</div>
 	<% end %>

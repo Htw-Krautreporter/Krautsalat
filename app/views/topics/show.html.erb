@@ -25,7 +25,7 @@ function hide(){
 
 	<div class="topic-desc" id="topic-description">
 	<p><%= @topic.description.gsub(/\n/, '<br/>').html_safe %></p>
-		<% if current_user.rights >= 1 %>
+		<% if current_user.rights == 2 || current_user.id == @topic.user_id %>
 			<%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
 			<%= link_to "Benutzer verwalten", manage_users_path, class: "btn btn-default" %>
 			<%= link_to "Löschen", topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie das Thema wirklich löschen?" } %>
