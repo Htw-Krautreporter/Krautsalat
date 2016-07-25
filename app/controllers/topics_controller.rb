@@ -7,10 +7,11 @@ class TopicsController < ApplicationController
 	def index
 		@own_topics  = Topic.where(user_id: current_user.id).order("created_at DESC")
 		if current_user.rights == 2
-			@topics = Topic.all.order("created_at DESC")
+			related_topics = Topic.all
 		else
-			@topics = current_user.topics.order("created_at DESC")
+			related_topics = current_user.topics
 		end
+		@related_topics = related_topics.select { |topic| !@own_topics.include?(topic) }
 	end
 
 	def show

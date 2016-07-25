@@ -1,6 +1,6 @@
 <% unless @own_topics.empty? %>
 	<section class="container">
-		<h1>Eigene Themen</h1>
+		<h1>Erstellte Themen</h1>
 		<% @own_topics.each do |topic| %>
 			<div class="col-md-4">
 				<%= link_to topic_path(topic) do %>
@@ -14,10 +14,10 @@
 	</section>
 <% end %>
 
-<% unless @topics.empty? %>
+<% unless @related_topics.empty? %>
 	<section class="container">
 		<h1>Themen</h1>
-		<% @topics.each do |topic| %>
+		<% @related_topics.each do |topic| %>
 			<div class="col-md-4">
 				<%= link_to topic_path(topic) do %>
 					<div class="topic">
@@ -27,5 +27,12 @@
 				<%end%>
 			</div>
 		<% end %>
+	</section>
+<% end %>
+
+<% if @own_topics.empty? && @related_topics.empty? %>
+	<section class="container">
+		<h1>Themen</h1>
+		<i>Niemand interessiert sich für deine Meinung - du bist zu keinem Thema eingeladen.</i>
 	</section>
 <% end %>
