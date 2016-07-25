@@ -2,7 +2,7 @@
 
 <h3>Aktive Benutzer</h3>
 <% @related_users.each do |user| %>
-	<p><%= user.username %> <i>"<%= user.expertise %>"</i></p>
+	<p><%= user.username %><% if user.expertise != "" %> <i>(<%= user.expertise %>)</i><% end %></p>
 	<%= link_to "Entfernen", disinvite_user_path(user_id: user.id), method: :post, class: "btn btn-default" %>
 <% end %>
 <% if @related_users.empty? %>
@@ -22,7 +22,7 @@
 <% end %>
 
 <% @filtered_users.each do |user| %>
-	<p><%= user.username %> <i>"<%= user.expertise %>"</i></p>
+	<p><%= user.username %><% if user.expertise != "" %> <i>(<%= user.expertise %>)</i><% end %></p>
 	<%= link_to "Einladen", invite_user_path(user_id: user.id), method: :post, class: "btn btn-default" %>
 <% end %>
 
