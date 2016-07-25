@@ -14,7 +14,7 @@
 	</section>
 <% end %>
 
-<% unless @related_topics.empty? && !@own_topics.empty? %>
+<% unless @related_topics.empty? %>
 	<section class="container">
 		<h1>Themen</h1>
 		<% @related_topics.each do |topic| %>
@@ -27,5 +27,12 @@
 				<%end%>
 			</div>
 		<% end %>
+	</section>
+<% end %>
+
+<% if @own_topics.empty? && @related_topics.empty? %>
+	<section class="container">
+		<h1>Themen</h1>
+		<i>Niemand interessiert sich für deine Meinung - du bist zu keinem Thema eingeladen.</i>
 	</section>
 <% end %>
