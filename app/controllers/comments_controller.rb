@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 	def create
 		@comment = @post.comments.create(comment_params)
 		@comment.user_id = current_user.id
-		if @post.save
+		if @comment.save
 			redirect_to topic_path(@topic)
 		else
 			redirect_to topic_path(@topic), alert: "Keine leeren Kommentare möglich!"		
