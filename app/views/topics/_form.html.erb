@@ -1,0 +1,6 @@
+<%= simple_form_for @topic do |f| %>
+	<%= f.input :title, label: "Thema" %>
+	<%= f.input :description, label: "Beschreibung" %>
+	<%= f.button :submit, class: "btn-special btn-bottom", value: "Speichern" %>
+	<%= button_to "Abbrechen", :back, class: "btn btn-default btn-special" %>
+<% end %>

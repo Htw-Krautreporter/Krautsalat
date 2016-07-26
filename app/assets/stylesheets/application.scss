@@ -1,0 +1,445 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/* General styles */
+
+body {
+	background-color: #fff;
+	font-family: 'Tisa Sans', sans-serif;
+}
+textarea, input{
+	font-family: 'Tisa Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Cqwxmrhvtmtvdcekacigyihmahc';
+	font-weight: 300;	
+}
+h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
+	font-family: 'Cqwxmrhvtmtvdcekacigyihmahc';
+	font-weight: 300;	
+}
+
+.navbar{
+	margin-bottom: 0px;
+}
+.container{
+	width: 77%;
+}
+.alert, .notice{
+	text-align: center;
+	vertical-align: middle;
+	font-family: 'Tisa Sans', sans-serif;
+}
+
+h1{
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+.btn-custom {
+	background-color: #fff;
+	color: #fd0243;
+	font-family: 'Tisa Sans', sans-serif; 
+	font-weight: 300;
+	border-radius: 8px;
+	padding: 10px 20px;
+	&:hover {
+		color: #fd0243;
+		transition: 0.5s;
+		background-color: #fff;
+		text-decoration: none;
+	}
+}
+.btn{
+	color: #fd0243;
+}
+
+.btn:hover, .links .btn-default:hover{
+	transition: 0.5s;
+	color: #fff;
+	background-color: #fd0243;
+}
+
+.chat{
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+
+	padding: 0px;
+	margin-bottom: 20px;
+}
+
+
+/* Navbar styles */
+
+.navbar {
+	font-family: 'Tisa Sans', sans-serif;
+	text-transform: uppercase;
+}
+
+.navbar-default {
+	background-color: #fff;
+
+	.navbar-brand{
+		background-color: #e91d45;
+		border: 1.5px solid #e91d45;
+		text-align: center;
+		color: white;
+		line-height: 1.5;
+		height: auto;
+		font-size: 1.1em;
+		margin: 15px 0px;
+		font-weight: 700;
+		margin-left: -45% !important;
+		padding: 1em 1.7em;
+	}
+	.navbar-brand:hover{
+		background-color: #c01335;
+		border: 1.5px solid #c01335;
+		color: white;
+	}
+	.navbar-nav{
+		margin: 15px;
+		margin-left: -5%;
+	}
+	.navbar-link {
+		color: #222;
+	}
+	.navbar-right{
+		color: #e91d45;
+		border: 1.5px solid #fd0243;
+		padding: 1em 1.7em;
+		font-weight: 700;
+		font-size: 1.1em;
+		margin-right: -5%;
+	}
+	.navbar-right:hover{
+		color: #c01335;
+		border: 1.5px solid #c01335;
+		text-decoration: none;
+	}
+
+}
+
+
+/* Links styles */
+
+.links {
+	margin-top: 20px;
+	.btn-default {
+		color: #fd0243;
+	}
+}
+.links-btn-group{
+	margin-top: 5% auto;
+	text-align: center;
+}
+.form-actions {
+	text-align: center;
+}
+
+
+/* Topic styles */
+
+.topic {
+	box-sizing: border-box;
+	background-color: #fff;
+	margin-bottom: 25px;
+	padding: 1.4em 1.4em;
+	height: 200px;
+	border: 1px solid #e7e7e7;
+	border-bottom: 3px solid #e91d45;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+
+	.topic-title, .topic-title a {
+		font-size: 1.7em;
+		margin-top: 0;
+		color: black;
+		margin-bottom: 3%;
+		text-decoration: none;
+		height: auto;
+		overflow: auto;
+		text-overflow: ellipsis;
+	}
+
+	.topic-desc{
+		height: 3em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.topic-author{
+		height: 1.5em;
+		color: #aaadb0;
+		text-transform: uppercase;
+	}
+
+	.btn-custom {
+		margin-top: 20px;
+	}
+
+
+}
+.topic:hover{
+	.topic-title{
+		color: #e91d45;
+	}
+	box-shadow:8px 8px 25px 0 rgba(187,187,187,0.3);
+	-webkit-transform:scale(1.03);
+	transform:scale(1.03)
+}
+
+.col-md-4 a:hover{
+	text-decoration: none;
+}
+
+
+.topic:nth-child(4n) {
+	clear: left;
+}
+
+/* Topic show-page styles */
+
+
+
+.topic-show, .topic-show-head {
+	box-sizing: border-box;
+	background-color: #fff;
+	padding: 2.0em 3em;
+	border-bottom: 4px solid #fd0243;
+	color: #black;
+	font-family: 'Tisa Sans', sans-serif;
+	font-weight: 300;
+
+	h2 {
+		margin-top: 0%;
+		color: #fd0243;
+		margin-bottom: 1%;
+		font-weight: bold;
+	}
+
+	.topic-posted-by, .topic-posted-at{
+		text-transform: uppercase;
+		color: #aaadb0;
+		text-align: center;
+	}
+	.topic-posted-at{
+		width: 80%;
+		margin-left: 10%;
+		float: left;
+	}
+	.onePost{
+		width: 90%;
+		margin: 3% 0%;
+		border-bottom: 1px solid #c6c6c6;
+		padding-right: 2%;
+		padding-bottom: 3%;
+		text-align: justify;
+	}
+	.onePost:nth-child(odd){
+		text-align: justify;
+		margin-right: 0%;
+		margin-left: auto;
+		padding-left: 2%;
+		padding-right: 0%;
+
+		.comment-posted-by, .links, .post-posted-by{
+			text-align: right; 
+		}
+		h4, form{
+			text-align: left;
+		}
+	}
+	>h3:first-child{
+		display: none;
+	}
+	.reply-to-msg {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		padding-top: 10px;
+		padding-bottom: 20px;
+		/*border-top: 1px solid #e6e6e6;
+		border-bottom: 1px solid #e6e6e6;*/
+	}
+}
+
+
+.topic-show-head{
+	line-height: 1.5em;
+	background-color: white;
+	vertical-align: middle;
+	text-align: center;
+	padding: 1%;
+	border-bottom: 2px solid #fd0243;
+
+	#downbutton, #upbutton{
+		cursor: pointer;
+		cursor: hand;
+	}
+}
+
+.topic-desc {
+		font-size: 1.2em;
+		line-height: 1.5;
+		padding: 1% 3%;
+		display: block;
+		height: auto;
+		background-color: white;
+		z-index: 5;
+		font-family: 'Tisa Sans', sans-serif;
+		font-weight: 700;
+		color: #7d7d7d;
+		font-style: italic;
+		display: none;
+	}
+
+.post_content label{
+	display: none;
+}
+
+/* User login styles */
+
+.form-inputs input, .edit_post, .edit_topic{
+	width: 60%; 
+	margin: 0 auto;
+	/*border-left: 1px solid #fd0243;*/
+}
+
+.form-inputs label{
+	font-family: 'Tisa Sans', sans-serif;
+	margin-left: 20%;
+}
+.form-inputs .help-block{
+	margin-left: 20%;
+}
+
+.hCenter{
+	text-align: center;
+	font-variant: small-caps;
+	/*text-decoration: underline #fd0243;*/
+	margin-bottom: 2%;
+}
+#new_user{
+	margin-bottom: 2%;
+}
+.edit_post label, .edit_topic label, .topic_title label, .topic_description label{
+	font-family: 'Tisa Sans', sans-serif;
+}
+
+
+/* DOES NOT WORK YET! */
+.checkbox label{
+	padding-left: 1%;
+	vertical-align: top;
+	color: #a4a4a4;
+}
+input[id="user_remember_me"]{
+	width: 5%;
+	margin-left: -3.5%;
+}
+
+
+
+.btn-special{
+	/*margin-left: 20%;*/
+	/*display: block;*/
+	margin: 0 auto;
+	font-family: 'Tisa Sans', sans-serif;
+	font-variant: small-caps;
+}
+.btn-bottom[value="Speichern"]{
+	float: left;
+	margin-right: 2%;
+}
+input[value="Registrieren"]{
+	margin-top: 5%;
+}
+
+.loginAlternativeLinks{
+	text-align: center;
+
+	br:nth-child(2){
+		float: right;
+	}
+}
+#register, #forgot, #log{
+	color: #a4a4a4;
+	font-family: 'Tisa Sans', sans-serif;
+	font-size: 12px;
+}
+
+.loginAlternativeLinks a:nth-child(1):after{
+	content: "|";
+	margin: 0% 1%;
+}
+
+
+
+
+/* Post styles */
+.post {
+	border-bottom: 1px solid #fff;
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	.post-content {
+		font-size: 1.25em;
+	}	
+
+	.links {
+		margin-top: 15px;
+		a {
+			color: #fd0243;
+			margin-right: 0px;
+		}
+	}
+	.reply-to-msg{
+		padding-top: 20px;
+		border-top: 1px solid #f2f2f2;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #f2f2f2;
+	}
+	.post-posted-by{
+		color: #b2b2b1;
+		font-size: 0.8em;
+	}
+}
+
+
+
+/* Comment styles */
+
+.comments{
+	font-size: 95%;
+	color: grey;
+	margin-left: 5%;
+
+	.comment-posted-by {
+		color: #b2b2b1;
+		font-size: 0.8em;
+	}
+	.links{
+		margin-top: 5px;
+		margin-bottom: 25px;
+	}
+}
+
+

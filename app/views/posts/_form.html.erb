@@ -1,0 +1,6 @@
+<% new_id = "new-post-#{@topic.id}" %>
+<%= simple_form_for([@topic, @topic.posts.build]) do |f| %> 
+	<%= f.input :content, label: "Beitrag", input_html: { id: new_id } %>
+	<%= render 'layouts/text_decoration', id: new_id %>
+	<%= f.button :submit, "Beitrag absenden", :class => 'btn-default'%>
+<% end %>

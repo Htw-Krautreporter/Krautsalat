@@ -1,0 +1,30 @@
+<h2><%= @topic.title %></h2>
+
+<h3>Aktive Benutzer</h3>
+<% @related_users.each do |user| %>
+	<p><%= user.username %> <i>"<%= user.expertise %>"</i></p>
+	<%= link_to "Entfernen", disinvite_user_path(user_id: user.id), method: :post, class: "btn btn-default" %>
+
+<% end %>
+<% if @related_users.empty? %>
+	<i>Keine Benutzer hinzugefügt</i>
+<% end %>
+
+<h3>Benutzer einladen</h3>
+<%= form_tag("manage_users", method: :get, id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Thema/Username/Email" %>
+	<%= submit_tag "Search", value: "Filtern", class: "btn btn-default" %>
+<% end %>
+
+<% if !@filtered_users.empty? %>
+<%= link_to "Alle einladen", invite_all_filtered_users_path(filtered_users: @filtered_users), method: :post, class: "btn btn-default" %>
+<% else %>
+	<i>Kein passender Benutzer gefunden</i>
+<% end %>
+
+<% @filtered_users.each do |user| %>
+	<p><%= user.username %> <i>"<%= user.expertise %>"</i></p>
+	<%= link_to "Einladen", invite_user_path(user_id: user.id), method: :post, class: "btn btn-default" %>
+<% end %>
+
+<%= link_to "Zurück", topic_path, class: "btn btn-default" %>
