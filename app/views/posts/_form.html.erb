@@ -1,4 +1,4 @@
 <%= simple_form_for([@topic, @topic.posts.build]) do |f| %> 
-	<%= f.input :content, label: "Beitrag" %>
-	<%= f.button :submit, label: "Beitrag absenden", :class => 'btn-default'%>
+	<%= f.input :content, label: "Beitrag", autofocus: true %>
+	<%= f.button :submit, label: "Beitrag absenden", :class => 'btn-default' %>
 <% end %>

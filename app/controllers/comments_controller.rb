@@ -5,8 +5,11 @@ class CommentsController < ApplicationController
 	def create
 		@comment = @post.comments.create(comment_params)
 		@comment.user_id = current_user.id
-		@comment.save
-		redirect_to topic_path(@topic)
+		if @comment.save
+			redirect_to topic_path(@topic)
+		else
+			redirect_to topic_path(@topic), alert: "Keine leeren Kommentare möglich!"		
+		end
 	end
 
 	def edit
