@@ -42,32 +42,32 @@ function appendLink(id) {
 function appendBoldText(id) {
 	var boldText = prompt("Fügen Sie hier Text ein, der fett dargestellt werden soll.");
 	if(boldText == null)
-	document.getElementById(id).value += "";
+		document.getElementById(id).value += "";
 	else
-	document.getElementById(id).value += "<b>" + boldText + "</b>";
+		document.getElementById(id).value += "<b>" + boldText + "</b>";
 }
 
 function appendItalicText(id) {
 	var italicText = prompt("Fügen Sie hier Text ein, der kursiv dargestellt werden soll.");
 	if(italicText == null)
-	document.getElementById(id).value += "";
+		document.getElementById(id).value += "";
 	else
-	document.getElementById(id).value += "<i>" + italicText + "</i>";
+		document.getElementById(id).value += "<i>" + italicText + "</i>";
 }
 
 function appendColoredText(id) {
 	var coloredText = prompt("Fügen Sie hier Text ein, der farbig hervorgehoben werden soll.");
 	if(coloredText == null)
-	document.getElementById(id).value += "";
+		document.getElementById(id).value += "";
 	else
-	document.getElementById(id).value += "<span class=\"coloredText\">" + coloredText + "</span>";
+		document.getElementById(id).value += "<span class=\"coloredText\">" + coloredText + "</span>";
 }
 
 function validateUrl(url) {
 	var pattern = /^((http|https|ftp):\/\/)/;
 
 	if(!pattern.test(url)) 
-	    return "http://" + url;
+		return "http://" + url;
 	else
 		return url
 }
