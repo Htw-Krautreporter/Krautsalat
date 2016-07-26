@@ -7,6 +7,7 @@
 					<div class="topic">
 						<p class="topic-author"><%= topic.user.username %></p>
 						<h2 class="topic-title"><%= topic.title %></h2>
+						<p class="topic-author"><%= count_new_posts_and_comments(topic) %> neue Beiträge</p>
 					</div>
 				<% end %>
 			</div>
@@ -23,6 +24,7 @@
 					<div class="topic">
 						<p class="topic-author"><%= topic.user.username %></p>
 						<h2 class="topic-title"><%= topic.title %></h2>
+						<p class="topic-author"><%= count_new_posts_and_comments(topic) %> neue Beiträge</p>
 					</div>
 				<%end%>
 			</div>

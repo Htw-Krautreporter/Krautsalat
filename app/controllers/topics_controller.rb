@@ -18,6 +18,13 @@ class TopicsController < ApplicationController
 		unless current_user == @topic.user || current_user.rights == 2 || @topic.users.include?(current_user)
 			redirect_to topics_path
 		end
+		visit = Visit.where(:user_id => current_user.id, :topic_id => @topic.id).take
+		if visit == nil
+			visit = Visit.create(:visited_at => Time.now, :user_id => current_user.id, :topic_id => @topic.id)
+		else
+			visit.visited_at = Time.now
+		end
+		visit.save
 	end
 
 	def new

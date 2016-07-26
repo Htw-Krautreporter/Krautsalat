@@ -73,4 +73,15 @@ ActiveRecord::Schema.define(version: 20160724183449) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
+  create_table "visits", force: :cascade do |t|
+    t.datetime "visited_at"
+    t.integer  "topic_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "visits", ["topic_id"], name: "index_visits_on_topic_id"
+  add_index "visits", ["user_id"], name: "index_visits_on_user_id"
+
 end
