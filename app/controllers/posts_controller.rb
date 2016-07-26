@@ -12,8 +12,7 @@ class PostsController < ApplicationController
 		if @post.save
 			redirect_to topic_path(@topic)
 		else
-			#@post = @topic.posts.find(:content)
-			render 'topics/show'
+			redirect_to topic_path(@topic), alert: "Keine leeren Beiträge möglich!"		
 		end
 	end
 
