@@ -1,6 +1,8 @@
+<% new_id = "edit-comment-#{@topic.id}" %>
 <h2 class="hCenter">Beitrag bearbeiten</h2>
 <%= simple_form_for([@topic, @post]) do |f| %>
-	<%= f.input :content, label: "Beitrag" %>
+	<%= f.input :content, label: "Beitrag", input_html: { id: new_id } %>
+	<%= render 'layouts/text_decoration', id: new_id %>
 	<%= f.button :submit, value: "Speichern", class: "btn-special" %>
 	<%= button_to "Abbrechen", :back, class: "btn btn-default btn-special" %>
 <% end %>
