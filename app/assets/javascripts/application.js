@@ -22,7 +22,7 @@ function appendImage(id) {
 	if(imageUrl == null)
 	var imageTag = "";
 	else
-	var imageTag = "<img src=\"" + validateUrl(linkUrl) + "\" class=\"content-images\" \\>";
+	var imageTag = "<img src=\"" + validateUrl(imageUrl) + "\" class=\"content-images\" \\>";
 	document.getElementById(id).value += imageTag;
 }
 
@@ -39,8 +39,28 @@ function appendLink(id) {
 	document.getElementById(id).value += link;
 }
 
-function appendBoldText() {
-	
+function appendBoldText(id) {
+	var boldText = prompt("Fügen Sie hier Text ein, der fett dargestellt werden soll.");
+	if(boldText == null)
+	document.getElementById(id).value += "";
+	else
+	document.getElementById(id).value += "<b>" + boldText + "</b>";
+}
+
+function appendItalicText(id) {
+	var italicText = prompt("Fügen Sie hier Text ein, der kursiv dargestellt werden soll.");
+	if(italicText == null)
+	document.getElementById(id).value += "";
+	else
+	document.getElementById(id).value += "<i>" + italicText + "</i>";
+}
+
+function appendColoredText(id) {
+	var coloredText = prompt("Fügen Sie hier Text ein, der farbig hervorgehoben werden soll.");
+	if(coloredText == null)
+	document.getElementById(id).value += "";
+	else
+	document.getElementById(id).value += "<span class=\"coloredText\">" + coloredText + "</span>";
 }
 
 function validateUrl(url) {
