@@ -1,6 +1,10 @@
 <% new_id = "new-post-#{@topic.id}" %>
 <%= simple_form_for([@topic, @topic.posts.build]) do |f| %> 
 	<%= f.input :content, label: "Beitrag", input_html: { id: new_id }, autofocus: true %>
+	<%= f.input :linkUrl, input_html: { id: new_id + "-lurl" } %>
+	<%= f.input :linkText, input_html: { id: new_id + "-ltext" } %>
+	<%= f.input :imageUrl, input_html: { id: new_id + "-iurl" } %>
+	<span onClick="appendImage('<%= new_id %>')" class="glyphicon glyphicon-picture glyphicon-form" title="Bild anhägen"></span>
 	<%= render 'layouts/text_decoration', id: new_id %>
 	<%= f.button :submit, label: "Beitrag absenden", :class => 'btn-default', :value => "Beitrag absenden" %>
 <% end %>

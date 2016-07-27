@@ -2,7 +2,9 @@
 <h2 class="hCenter">Beitrag bearbeiten</h2>
 <%= simple_form_for([@topic, @post]) do |f| %>
 	<%= f.input :content, label: "Beitrag", input_html: { id: new_id } %>
-	<%= render 'layouts/text_decoration', id: new_id %>
+	<%= f.input :linkUrl, input_html: { id: new_id + "-lurl" } %>
+	<%= f.input :linkText, input_html: { id: new_id + "-ltext" } %>
+	<%= f.input :imageUrl, input_html: { id: new_id + "-iurl" } %>
 	<%= f.button :submit, value: "Speichern", class: "btn-special" %>
 	<%= button_to "Abbrechen", :back, class: "btn btn-default btn-special" %>
 <% end %>
