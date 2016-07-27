@@ -18,25 +18,19 @@
 
 
 function appendImage(id) {
-	var imageUrl = prompt("Fügen Sie hier die URL zu einem Bild ein.", "http://...");
-	if(imageUrl == null)
-		var imageTag = "";
-	else
-		var imageTag = "<img src=\"" + validateUrl(imageUrl) + "\" class=\"content-images\" \\>";
-	document.getElementById(id).value += imageTag;
+	var imageUrl = prompt("Fügen Sie hier die URL zu einem Bild ein.");
+	document.getElementById(id + "-iurl").value = imageUrl = null? "" : validateUrl(imageUrl);
 }
 
 function appendLink(id) {
-	var linkUrl = prompt("Fügen Sie hier eine URL ein.", "http://...");
+	var linkUrl = prompt("Fügen Sie hier eine URL ein.");
 	var linkText = prompt("Fügen Sie hier einen Linktext ein. (optional)");
-	if(linkUrl == null) 
-		var link = "";
-	else {
-		if (linkText == null)
-			linkText = linkUrl;
-		var link = "<a href=\"" + validateUrl(linkUrl) + "\" class=\"content-link\" target=\"_blank\" \\>" + linkText + "</a>";
-	}
-	document.getElementById(id).value += link;
+
+	if (linkText == null)
+		linkText = linkUrl;
+
+	document.getElementById(id+ "-lurl").value = linkUrl == null? "" : validateUrl(linkUrl);
+	document.getElementById(id+ "-ltext").value = linkText.length < 1 ? "" : linkText;
 }
 
 function appendBoldText(id) {

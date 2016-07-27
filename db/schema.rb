@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724183449) do
+ActiveRecord::Schema.define(version: 20160727084740) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20160724183449) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "imageUrl"
+    t.string   "linkUrl"
+    t.string   "linkText"
   end
 
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
