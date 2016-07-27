@@ -70,14 +70,14 @@
 	box-sizing: border-box;
 	background-color: #fff;
 	padding: 2.0em 3em;
-	border-bottom: 4px solid #fd0243;
+	border-bottom: 4px solid #e91d45;
 	color: #black;
 	font-family: 'Tisa Sans', sans-serif;
 	font-weight: 300;
 
 	h2 {
 		margin-top: 0%;
-		color: #fd0243;
+		color: #e91d45;
 		margin-bottom: 1%;
 		font-weight: bold;
 	}
@@ -122,7 +122,7 @@
 	}
 }
 #posts{
-	height: 60em; 
+	max-height: 60em; 
 	overflow-y: scroll;
 	padding-right: 2%;
 }
@@ -133,7 +133,7 @@
 	vertical-align: middle;
 	text-align: center;
 	padding: 1em 0em;
-	border-bottom: 2px solid #fd0243;
+	border-bottom: 2px solid #e91d45;
 
 	cursor: pointer;
 	cursor: hand;
@@ -185,20 +185,58 @@
 
 
 
+
+/* New topic styles */
+
+.new_topic{
+	
+	input[value="Abbrechen"]{
+		display: none;
+	}
+	input[value="Speichern"]{
+		float: left;
+		margin-right: 0.5%;
+	}
+}
+
+input[value="Speichern"]{
+	margin-right: 0.5%;
+}
+
+
+
+
 /* Invite Users styles*/
 
 .manage_users{
 	text-align: center;
 	margin-bottom: 5%;
+
+	h2{
+		margin-bottom: 2%;
+	}
+	.active_users, .invite_users{
+		width: 50%;
+	}
+	.active_users{
+		float: left;
+		border-right: 1px solid #e7e7e7;
+	}
+	.invite_users{
+		float: right;
+		border-left: 1px solid #e7e7e7;
+	}
 }
+
+
 table{
-	width: 65%;
+	width: 85%;
 	margin: 2% auto;
 	margin-bottom: 5%;
 	padding: 2% 0%;
 
 	tr{
-		width: 100%;
+		width: 85%;
 		height: 4em;
 		margin: 1% 0%;
 		border-bottom: 1px solid #e7e7e7;
@@ -222,27 +260,43 @@ table{
 	}
 }
 
-.manage_users h3{
-	margin-top: 5%;
-}
 .manage_users .btn{
 	min-width: 10%;
 }
 
 #search-form[action="manage_users"]{
 	text-align: center;
-	margin: 1% 0%;
-	margin-top: 2%;
+	margin: 2% 0%;
+	margin-bottom: 5%;
 
 	#search{
 		width: 40%;
-		display: block;
+		height: 34px;
+		border-radius: 6px;
 		text-align: center;
 		margin: 0 auto 1%;
+		border: 1px solid #ccc;
+		vertical-align: top;
+	}
+
+	input{
+		display: inline;
 	}
 }
 
 #no_user{
 	display: block;
 	margin-top: 2%;
+}
+
+.headline{
+	width: 94%;
+	margin: 0 auto;
+	margin-bottom: 2%;
+	border-bottom: 1px solid #ccc;
+
+	.btn{
+		min-width: 10px;
+		float: left;
+	}
 }

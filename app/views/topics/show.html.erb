@@ -59,17 +59,10 @@
 	</div>
 
 	<div class="topic-desc" id="topic-description">
-	<p><%= @topic.description.gsub(/\n/, '<br/>').html_safe %></p>
-		<% if current_user.admin || @topic.user_id == current_user.id %>
-			<%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
-		<% end %>
-
-		<% if current_user.admin || @topic.user_id == current_user.id %>
-			<%= link_to "Benutzer verwalten", manage_users_path, class: "btn btn-default" %>
-		<% end %>
+		<p><%= @topic.description.gsub(/\n/, '<br/>').html_safe %></p>
 	</div>
+
 	<div class="topic-show">
-	
 		<div id="posts">
 			<% @posts.each do |post| %>
 			<div class="onePost">
@@ -87,7 +80,6 @@
 				</div>
 
 			</div>
-
 			<% end %>
 		</div>
 

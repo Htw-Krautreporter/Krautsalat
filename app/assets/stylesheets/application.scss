@@ -68,13 +68,13 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 
 .btn-custom {
 	background-color: #fff;
-	color: #fd0243;
+	color: #e91d45;
 	font-family: 'Tisa Sans', sans-serif; 
 	font-weight: 300;
 	border-radius: 8px;
 	padding: 10px 20px;
 	&:hover {
-		color: #fd0243;
+		color: #e91d45;
 		transition: 0.5s;
 		background-color: #fff;
 		text-decoration: none;
@@ -89,7 +89,7 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 	background-color: #e91d45;
 }
 .btn-special{
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	font-family: 'Tisa Sans', sans-serif;
 	/*font-variant: small-caps;*/
 }
@@ -102,6 +102,7 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 	font-family: 'Tisa Sans', sans-serif;
 	text-transform: uppercase;
 	margin-bottom: 0px;
+	box-shadow:8px 8px 25px 0 rgba(187,187,187,0.3);
 }
 
 .navbar-default {
@@ -134,7 +135,7 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 	}
 	.navbar-right{
 		color: #e91d45;
-		border: 1.5px solid #fd0243;
+		border: 1.5px solid #e91d45;
 		padding: 1em 1.7em;
 		font-weight: 700;
 		font-size: 1.1em;
@@ -155,7 +156,7 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 .links {
 	margin-top: 20px;
 	.btn-default {
-		color: #fd0243;
+		color: #e91d45;
 	}
 }
 .links-btn-group{
@@ -174,7 +175,6 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 .form-inputs input, .edit_post, .edit_topic{
 	width: 60%; 
 	margin: 0 auto;
-	/*border-left: 1px solid #fd0243;*/
 }
 
 .form-inputs label{
@@ -188,7 +188,6 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 .hCenter{
 	text-align: center;
 	font-variant: small-caps;
-	/*text-decoration: underline #fd0243;*/
 	margin-bottom: 2%;
 }
 #new_user{
@@ -211,7 +210,6 @@ input[id="user_remember_me"]{
 
 .btn-bottom[value="Speichern"]{
 	float: left;
-	margin-right: 2%;
 }
 input[value="Registrieren"]{
 	margin-top: 5%;
