@@ -5,11 +5,13 @@
 	<% end %>
 	<p class="comment-content"><%= comment.content.gsub(/\n/, '<br/>').html_safe %></p>
 	<p class="comment-posted-by"><%= signature_string(comment.user.username, comment.created_at, comment.updated_at) %></p>
-	<% if current_user.rights == 2 || comment.user_id == current_user.id %>
-		<div class="links">
+	<div class="links">
+		<% if comment.user_id == current_user.id %>
 			<%= link_to "Bearbeiten", edit_topic_post_comment_path(post.topic, post, comment), class: "btn btn-default" %>
+		<% end %>
+		<% if comment.user_id == current_user.id || current_user.rights == 2 %>
 			<%= link_to "Löschen", topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Kommentar? wirklich löschen?" } %>
-		</div>
-	<% end %>
+		<% end %>
+	</div>
 </div>
 
