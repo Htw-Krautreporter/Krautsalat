@@ -5,6 +5,11 @@
 	<%= f.input :linkUrl, input_html: { id: new_id + "-lurl" } %>
 	<%= f.input :linkText, input_html: { id: new_id + "-ltext" } %>
 	<%= f.input :imageUrl, input_html: { id: new_id + "-iurl" } %>
-	<%= f.button :submit, value: "Speichern", class: "btn-special" %>
-	<%= button_to "Abbrechen", :back, class: "btn btn-default btn-special" %>
+	<div class="text_icons">
+		<%= render 'layouts/text_decoration', id: new_id %>
+	</div>
+	<div class="links_right">
+		<%= f.button :submit, value: "Speichern", class: "btn-special" %>
+		<%= button_to "Abbrechen", :back, class: "btn btn-default btn-special" %>
+	</div>
 <% end %>

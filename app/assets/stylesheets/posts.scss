@@ -29,10 +29,22 @@
 	}
 	.post-posted-by{
 		color: #b2b2b1;
-		font-size: 0.8em;
+		font-size: 0.9em;
 	}
 }
 
 .post_content label{
 	display: none;
+}
+
+.new_post{
+	input[type="submit"]{
+		 margin-right: 0px;
+		 margin-left: auto;
+		 display: block;
+	}
+	.text_icons{
+		display: block;
+		float: left;
+	}
 }

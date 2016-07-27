@@ -4,7 +4,7 @@
 		<div id="icons">
 			<div id="icons_left">
 				<!-- Zurück -->
-				<%= link_to topics_path, class: "btn btn-default" do %>
+				<%= link_to topics_path, class: "btn btn-default", title: "Zurück" do %>
 					<span class="glyphicon glyphicon-arrow-left"></span>
 				<% end %>
 
@@ -24,21 +24,37 @@
 
 				<!-- Benutzer verwalten -->
 				<% if current_user.rights == 2 || @topic.user_id == current_user.id %>
-					<%= link_to manage_users_path, class: "btn btn-default" do %>
+					<%= link_to manage_users_path, class: "btn btn-default", title: "Benutzer verwalten" do %>
 						<span class="glyphicon glyphicon-cog"></span>
 					<% end %>
-				
 
 				<!-- Bearbeiten -->
 				
-					<%= link_to edit_topic_path(@topic), class: "btn btn-default" do %>
+					<%= link_to edit_topic_path(@topic), class: "btn btn-default", title: "Bearbeiten" do %>
 						<span class="glyphicon glyphicon-pencil"></span>
 					<% end %>
-				
 
 				<!-- Löschen -->
-					<%= link_to topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie das Thema wirklich löschen?" } do %>
+					<%= link_to topic_path(@topic), class: "btn btn-default", method: :delete, title: "Thema löschen", data: { confirm: "Möchten Sie das Thema wirklich löschen?" } do %>
 						<span class="glyphicon glyphicon-remove"></span>
+					<% end %>
+
+					<% else %>
+						<%= link_to manage_users_path, class: "btn btn-default no_display" do %>
+						<span class="glyphicon glyphicon-cog"></span>
+					<% end %>
+
+				<!-- Bearbeiten -->
+				
+					<%= link_to edit_topic_path(@topic), class: "btn btn-default no_display" do %>
+						<span class="glyphicon glyphicon-pencil"></span>
+					<% end %>
+
+				<!-- Löschen -->
+					<% if @topic.users.include?(current_user) %>
+						<%= link_to leave_topic_path, method: :post, class: "btn btn-default", title: "Thema verlassen", data: { confirm: "Möchten Sie das Thema wirklich unwiderruflich verlassen?" } do%>
+							<span class="glyphicon glyphicon-log-out"></span>
+						<% end %>
 					<% end %>
 				<% end %>
 			</div>
@@ -50,7 +66,7 @@
 		
 		<h2 class="topic-show-title">
 			<%= @topic.title %>
-		</h2>
+		</h2>		
 		<p class="topic-posted-at"><%= time_string(@topic.created_at) %></p>
 		<div class="topic-desc" id="topic-description">
 			<p><%= @topic.description.gsub(/\n/, '<br/>').html_safe %></p>
@@ -63,10 +79,6 @@
 			<%= link_to "Bearbeiten", edit_topic_path(@topic), class: "btn btn-default" %>
 			<%= link_to "Benutzer verwalten", manage_users_path, class: "btn btn-default" %>
 			<%= link_to "Löschen", topic_path(@topic), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie das Thema wirklich löschen?" } %>
-		<% end %>
-
-		<% if @topic.users.include?(current_user) %>
-			<%= link_to "Thema verlassen", leave_topic_path, method: :post, class: "btn btn-default", data: { confirm: "Möchten Sie das Thema wirklich unwiderruflich verlassen?" } %>
 		<% end %>
 	</div>
 
@@ -94,11 +106,6 @@
 		<div class="reply-to-msg">
 			<h3>Beitrag hinzufügen:</h3>
 			<%= render 'posts/form' %>
-		</div>
-
-		<div class="links-btn-group">
-
-			<%= link_to "Zurück", topics_path, class: "btn btn-default" %>
 		</div>
 	</div>
 </div>

@@ -60,7 +60,9 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 	margin-right: 0px;
 	margin-left: auto;
 }
-
+.no_display{
+	visibility: hidden;
+}
 
 
 
@@ -94,6 +96,20 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 	/*font-variant: small-caps;*/
 }
 
+.text_icons{
+	display: block;
+	float: left;
+	cursor: pointer;
+	cursor: hand;
+}
+.text_icons + input{
+	display: block;
+	margin-right: 0px;
+	margin-left: auto;
+}
+.links_right{
+	text-align: right;
+}
 
 
 /* Navbar styles */
