@@ -16,6 +16,37 @@
 //= require turbolinks
 //= require_tree .
 
+function showComments(changeStatus, given_id){
+	var changeArray = document.getElementsByClassName(changeStatus);
+	var commentElements = document.getElementsByClassName("comments");
+	var elementIndex = 0;
+
+	for(var i = 0; i < commentElements.length; i++){
+		if(commentElements[i].id == given_id){
+			elementIndex = i;
+		}
+	}
+
+	var toChange = changeArray[elementIndex];
+
+	if(toChange.style.display == 'block'){
+		toChange.style.display = 'none';
+	}
+	else{
+		toChange.style.display = 'block';
+	}
+}
+
+function show(elementID){
+	var toChange = document.getElementById(elementID);
+	if(toChange.style.display == 'block'){
+		toChange.style.display = 'none';
+	}
+	else{
+		toChange.style.display = 'block';
+	}
+}
+
 
 function appendImage(id) {
 	var imageUrl = prompt("Fügen Sie hier die URL zu einem Bild ein.", "http://...");
