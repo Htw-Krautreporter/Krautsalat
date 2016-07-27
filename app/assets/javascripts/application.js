@@ -19,18 +19,28 @@
 
 function appendImage(id) {
 	var imageUrl = prompt("Fügen Sie hier die URL zu einem Bild ein.");
-	document.getElementById(id + "-iurl").value = imageUrl = null? "" : validateUrl(imageUrl);
+	document.getElementById(id + "-iurl").value = (imageUrl == null || imageUrl == "")? "" : validateUrl(imageUrl);
 }
 
 function appendLink(id) {
 	var linkUrl = prompt("Fügen Sie hier eine URL ein.");
 	var linkText = prompt("Fügen Sie hier einen Linktext ein. (optional)");
 
-	if (linkText == null)
-		linkText = linkUrl;
+	if(linkUrl == null || linkUrl == "") {
+		var linku = "";
+	} else {
+		var linku = validateUrl(linkUrl);
+	}
 
-	document.getElementById(id+ "-lurl").value = linkUrl == null? "" : validateUrl(linkUrl);
-	document.getElementById(id+ "-ltext").value = linkText.length < 1 ? "" : linkText;
+
+	if (linkText == null || linkUrl == "") {
+		var linkt = linkUrl;
+	} else {
+		var linkt = linkText;
+	}
+
+	document.getElementById(id+ "-lurl").value = linku;
+	document.getElementById(id+ "-ltext").value = linkt;
 }
 
 function appendBoldText(id) {

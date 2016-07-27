@@ -4,6 +4,7 @@
 	<%= f.input :linkUrl, input_html: { id: new_id + "-lurl" } %>
 	<%= f.input :linkText, input_html: { id: new_id + "-ltext" } %>
 	<%= f.input :imageUrl, input_html: { id: new_id + "-iurl" } %>
+	<span onClick="appendImage('<%= new_id %>')" class="glyphicon glyphicon-picture glyphicon-form" title="Bild anhägen"></span>
 	<%= render 'layouts/text_decoration', id: new_id %>
 	<%= f.button :submit, "Beitrag absenden", :class => 'btn-default'%>
 <% end %>

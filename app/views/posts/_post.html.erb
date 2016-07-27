@@ -3,7 +3,7 @@
 		<img src="<%= post.imageUrl %>" class="postImage"/>
 	<% end %>
 	<% unless post.linkUrl == "" %>
-		<a href="<%= post.linkUrl %>"> <%= post.linkText %> </a>
+		<a href="<%= post.linkUrl %>" target="_blank" title="<%= post.linkText %>" class="content-link"> <%= post.linkText %> </a>
 	<% end %>
 	<p class="post-content"><%= post.content.gsub(/\n/, '<br/>').html_safe %></p>
 	<p class="post-posted-by"> <%= signature_string(post.user.username, post.created_at, post.updated_at) %></p>
