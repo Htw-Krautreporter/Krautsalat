@@ -1,6 +1,8 @@
 <% new_id = "new-comment-#{@post.id}" %>
 <%= simple_form_for([@topic, @post, @post.comments.build]) do |f| %> 
 	<%= f.input :content, label: "Kommentar", input_html: { id: new_id } %>
-	<%= render 'layouts/text_decoration', id: new_id %>
+	<div class="text_icons">
+		<%= render 'layouts/text_decoration', id: new_id %>
+	</div>
 	<%= f.button :submit, :class => 'btn btn-default', :value => "Kommentieren" %>
 <% end %>

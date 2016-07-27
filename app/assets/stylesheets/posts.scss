@@ -36,3 +36,15 @@
 .post_content label{
 	display: none;
 }
+
+.new_post{
+	input[type="submit"]{
+		 margin-right: 0px;
+		 margin-left: auto;
+		 display: block;
+	}
+	.text_icons{
+		display: block;
+		float: left;
+	}
+}
