@@ -1,6 +1,4 @@
 <% new_id = "new-post-#{@topic.id}" %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 <%= simple_form_for([@topic, @topic.posts.build]) do |f| %> 
 	
 	<%= f.input :linkUrl, input_html: { id: new_id + "-lurl" }, as: :hidden %>
