@@ -7,6 +7,6 @@
 		<%= f.input :linkUrl, input_html: { id: new_id + "-lurl" } %>
 		<%= f.input :linkText, input_html: { id: new_id + "-ltext" } %>
 		<%= f.button :submit, value: "Speichern", class: "btn-special" %>
-		<%= button_to "Abbrechen", :back, class: "btn btn-default btn-special" %>
+		<%= link_to "Abbrechen", topic_path(@topic), class: "btn btn-default btn-special" %>
 	<% end %>
 </div>
