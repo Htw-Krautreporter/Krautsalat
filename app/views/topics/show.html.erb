@@ -8,12 +8,16 @@
 					<span class="glyphicon glyphicon-arrow-left"></span>
 				<% end %>
 
+				<!-- Neuer Post -->
+				<a href="#add_new_post" class="btn btn-default no_display" title="Beitrag hinzufügen">
+					<span class="glyphicon glyphicon-plus"></span>
+				</a>
+
 				<!-- Zurück -->
 				<%= link_to topics_path, class: "btn btn-default no_display" do %>
 					<span class="glyphicon glyphicon-arrow-left"></span>
 				<% end %>
 
-				<!-- Zurück -->
 				<%= link_to topics_path, class: "btn btn-default no_display" do %>
 					<span class="glyphicon glyphicon-arrow-left"></span>
 				<% end %>
@@ -24,6 +28,10 @@
 
 				<!-- Benutzer verwalten -->
 				<% if current_user.rights == 2 || @topic.user_id == current_user.id %>
+					<a href="#add_new_post" class="btn btn-default" title="Beitrag hinzufügen">
+						<span class="glyphicon glyphicon-plus"></span>
+					</a>
+
 					<%= link_to manage_users_path, class: "btn btn-default", title: "Benutzer verwalten" do %>
 						<span class="glyphicon glyphicon-cog"></span>
 					<% end %>
@@ -49,6 +57,10 @@
 					<%= link_to edit_topic_path(@topic), class: "btn btn-default no_display" do %>
 						<span class="glyphicon glyphicon-pencil"></span>
 					<% end %>
+
+					<a href="#add_new_post" class="btn btn-default" title="Beitrag hinzufügen">
+						<span class="glyphicon glyphicon-plus"></span>
+					</a>
 
 				<!-- Löschen -->
 					<% if @topic.users.include?(current_user) %>
@@ -103,7 +115,7 @@
 			<% end %>
 		</div>
 
-		<div class="reply-to-msg">
+		<div id="add_new_post" class="reply-to-msg" >
 			<h3>Beitrag hinzufügen:</h3>
 			<%= render 'posts/form' %>
 		</div>

@@ -25,12 +25,17 @@
 
 .all_comments{
 	display: none;
-	height: 20em;
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 	padding-right: 1%;
 }
 
 .text_icons{
 	display: block;
 	float: left;
+}
+
+#new_comment{
+	textarea{
+		height: 10em;
+	}
 }
