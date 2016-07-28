@@ -1,0 +1,50 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+@media print {
+
+	.btn-custom {
+		display: none;
+	}
+
+	.btn {
+		display: none;
+	}
+
+	h4 {
+		display: none;
+	}
+
+	#new_comment {
+		display: none;
+	}
+
+	.reply-to-msg {
+		display: none;
+		}
+
+	links {
+		display: none;
+	}
+
+	.post-content {
+		font-weight: bold;
+	}
+
+	.comments{
+		font-size: 0.95em;
+	}
+
+	.comment-posted-by {
+		font-style: italic;
+		font-size: 0.8em;
+	}
+
+	.post-posted-by{
+		font-style: italic;
+		font-size: 0.8em;
+	}
+
+}
