@@ -16,7 +16,7 @@
 	padding: 1.4em 1.4em;
 	height: 200px;
 	border: 1px solid #e7e7e7;
-	border-bottom: 3px solid #e91d45;
+	border-bottom: 3px solid $normal-red;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	word-wrap: break-word;
@@ -49,7 +49,7 @@
 
 .topic:hover{
 	.topic-title{
-		color: #e91d45;
+		color: $normal-red;
 	}
 	box-shadow:8px 8px 25px 0 rgba(187,187,187,0.3);
 	-webkit-transform:scale(1.03);
@@ -74,14 +74,14 @@
 	box-sizing: border-box;
 	background-color: #fff;
 	padding: 2.0em 3em;
-	border-bottom: 4px solid #e91d45;
+	border-bottom: 4px solid $normal-red;
 	color: #black;
-	font-family: 'TisaSansOT', sans-serif;
+	font-family: $font-general, sans-serif;
 	font-weight: 300;
 
 	h2 {
 		margin-top: 0%;
-		color: #e91d45;
+		color: $normal-red;
 		margin-bottom: 1%;
 		font-weight: bold;
 	}
@@ -132,7 +132,7 @@
 	vertical-align: middle;
 	text-align: center;
 	padding: 1em 0em;
-	border-bottom: 2px solid #e91d45;
+	border-bottom: 2px solid $normal-red;
 
 	cursor: pointer;
 	cursor: hand;
@@ -146,7 +146,7 @@
 		height: auto;
 		background-color: white;
 		z-index: 5;
-		font-family: 'TisaSansOT', sans-serif;
+		font-family: $font-general, sans-serif;
 		font-weight: 700;
 		color: #7d7d7d;
 		font-style: italic;

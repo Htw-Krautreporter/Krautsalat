@@ -17,20 +17,26 @@
 @import "bootstrap";
 
 
+$font-general: 'Tisa Sans';
+$font-headline: 'Cqwxmrhvtmtvdcekacigyihmahc';
+
+$normal-red: #e91d45;
+$dark-red: #c01335;
+
 
 
 /* General styles */
 
 body {
 	background-color: #fff;
-	font-family: 'TisaSansOT', sans-serif;
+	font-family: $font-general, sans-serif;
 }
 textarea, input{
-	font-family: 'TisaSansOT', sans-serif;
+	font-family: $font-general, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Cqwxmrhvtmtvdcekacigyihmahc';
+	font-family: $font-headline;
 	font-weight: 300;	
 }
 h1{
@@ -38,7 +44,7 @@ h1{
 	text-align: center;
 }
 h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
-	font-family: 'Cqwxmrhvtmtvdcekacigyihmahc';
+	font-family: $font-headline;
 	font-weight: 300;	
 }
 
@@ -49,7 +55,7 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 .alert, .notice{
 	text-align: center;
 	vertical-align: middle;
-	font-family: 'Tisa Sans', sans-serif;
+	font-family: $font-general, sans-serif;
 }
 .center{
 	text-align: center;
@@ -70,29 +76,29 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 
 .btn-custom {
 	background-color: #fff;
-	color: #e91d45;
-	font-family: 'Tisa Sans', sans-serif; 
+	color: $normal-red;
+	font-family: $font-general, sans-serif; 
 	font-weight: 300;
 	border-radius: 8px;
 	padding: 10px 20px;
 	&:hover {
-		color: #e91d45;
+		color: $normal-red;
 		transition: 0.5s;
 		background-color: #fff;
 		text-decoration: none;
 	}
 }
 .btn{
-	color: #e91d45;
+	color: $normal-red;
 }
 .btn:hover, .links .btn-default:hover{
 	transition: 0.5s;
 	color: #fff;
-	background-color: #e91d45;
+	background-color: $normal-red;
 }
 .btn-special{
 	/*margin: 0 auto;*/
-	font-family: 'Tisa Sans', sans-serif;
+	font-family: $font-general, sans-serif;
 	/*font-variant: small-caps;*/
 }
 
@@ -115,7 +121,7 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 /* Navbar styles */
 
 .navbar {
-	font-family: 'Tisa Sans', sans-serif;
+	font-family: $font-general, sans-serif;
 	text-transform: uppercase;
 	margin-bottom: 0px;
 	box-shadow:8px 8px 25px 0 rgba(187,187,187,0.3);
@@ -125,8 +131,8 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 	background-color: #fff;
 
 	.navbar-brand{
-		background-color: #e91d45;
-		border: 1.5px solid #e91d45;
+		background-color: $normal-red;
+		border: 1.5px solid $normal-red;
 		text-align: center;
 		color: white;
 		line-height: 1.5;
@@ -138,13 +144,13 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 		padding: 1em 1.7em;
 	}
 	.navbar-brand:hover{
-		background-color: #c01335;
-		border: 1.5px solid #c01335;
+		background-color: $dark-red;
+		border: 1.5px solid $dark-red;
 		color: white;
 	}
 	.navbar-brand:focus{
-		background-color: #e91d45;
-		border: 1.5px solid #e91d45;
+		background-color: $normal-red;
+		border: 1.5px solid $normal-red;
 		text-align: center;
 		color: white;
 	}
@@ -156,16 +162,16 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 		color: #222;
 	}
 	.navbar-right{
-		color: #e91d45;
-		border: 1.5px solid #e91d45;
+		color: $normal-red;
+		border: 1.5px solid $normal-red;
 		padding: 1em 1.7em;
 		font-weight: 700;
 		font-size: 1.1em;
 		margin-right: -5%;
 	}
 	.navbar-right:hover{
-		color: #c01335;
-		border: 1.5px solid #c01335;
+		color: $dark-red;
+		border: 1.5px solid $dark-red;
 		text-decoration: none;
 	}
 }
@@ -178,7 +184,7 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 .links {
 	margin-top: 20px;
 	.btn-default {
-		color: #e91d45;
+		color: $normal-red;
 	}
 }
 .links-btn-group{
@@ -200,7 +206,7 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 }
 
 .form-inputs label{
-	font-family: 'Tisa Sans', sans-serif;
+	font-family: $font-general, sans-serif;
 	margin-left: 20%;
 }
 .form-inputs .help-block{
@@ -216,7 +222,7 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 	margin-bottom: 2%;
 }
 .edit_post label, .edit_topic label, .topic_title label, .topic_description label{
-	font-family: 'Tisa Sans', sans-serif;
+	font-family: $font-general, sans-serif;
 }
 
 .edit_post, .edit_topic, .edit_comment, #new_post, #new_topic{
@@ -242,7 +248,7 @@ input[value="Registrieren"]{
 }
 #register, #forgot, #log{
 	color: #a4a4a4;
-	font-family: 'Tisa Sans', sans-serif;
+	font-family: $font-general, sans-serif;
 	font-size: 12px;
 }
 
