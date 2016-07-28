@@ -1,0 +1,32 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+@media print {
+
+	.btn-custom {
+		display: none;
+	}
+
+	.btn {
+		display: none;
+	}
+
+	h4 {
+		display: none;
+	}
+
+	#new_comment {
+		display: none;
+	}
+
+	.reply-to-msg {
+		display: none;
+		}
+
+	links {
+	display: none;
+	}
+
+}
