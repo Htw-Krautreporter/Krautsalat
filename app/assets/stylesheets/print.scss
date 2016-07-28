@@ -3,156 +3,30 @@
 @import "bootstrap";
 
 
-/* General styles */
-
 @media print {
 
-body post topic div {
-margin:0; 
-padding:0; 
-line-height: 1.4em; 
-word-spacing:1px; 
-letter-spacing:0.2px;
-font-size:11pt;
-color: black;
-text-align: left;
-align: left;
-
-}
-
-
-.alert, .notice{
-	text-align: left;
-	vertical-align: middle;
-	font-family: 'Tisa Sans', sans-serif;
-}
-
-h1{
-	margin-bottom: 2%;
-	text-align: left;
-}
-
-.btn-custom {
-	display: none;
-}
-.btn{
-	display: none;
-}
-
-
-	.topic-show-head > .topic-desc {
-		display: block !important;
-		align: left;
-	}
-
-	.all_comments{
-		display: block;
-		align: left;
-		margin: 0 auto;
-		text-align: left;
-	}
-
-	.comments{
-	font-size: 55%;
-	color: grey;
-	margin: 0 auto;
-	text-align: left;
-
-	.comment-posted-by {
-		color: #b2b2b1;
-		font-size: 0.6em;
-	}
-	.links{
-		margin-top: 5px;
-		margin-bottom: 25px;
-	}
-	h4{
-		cursor: pointer;
-		cursor: hand;
-	}
-}
-
-	#new_comment{
-		display: none;
-}
-
-
-.topic-show, .topic-show-head {
-
-#4 {
-align: left;
-	text-align: left;
-}
-	box-sizing: border-box;
-	background-color: #fff;
-	padding: 2.0em 3em;
-	border-bottom: 1px solid #fd0243;
-	color: #black;
-	font-family: 'Tisa Sans', sans-serif;
-	font-weight: 300;
-
-	h2 {
-		margin-top: 0%;
-		color: #fd0243;
-		margin-bottom: 1%;
-		font-weight: bold;
-	}
-
-	.topic-posted-by, .topic-posted-at{
-		text-transform: uppercase;
-		color: #aaadb0;
-		text-align: center;
-	}
-	.topic-posted-at{
-		width: 100%;
-		margin-left: 0;
-		float: left;
-	}
-	.onePost{
-		width: 100%;
-		margin: 0;
-		border-bottom: 1px solid #c6c6c6;
-		padding-right: 2%;
-		padding-bottom: 3%;
-		text-align: left;
-	}
-	.onePost:nth-child(odd){
-		text-align: left;
-		margin: 0 auto;
-
-		.comment-posted-by, .links, .post-posted-by{
-			text-align: left; 
-		}
-		h4, form{
-			text-align: left;
-		}
-	}
-
-	.onePost:nth-child(even){
-		text-align: left;
-		margin: 0 auto;
-
-		.comment-posted-by, .links, .post-posted-by, h4{
-			text-align: left; 
-		}
-		h4{
-			margin: 0 auto;
-			text-align: left;
-		}
-		form{
-			text-align: left;
-		}
-	}
-	>h3:first-child{
+	.btn-custom {
 		display: none;
 	}
+
+	.btn {
+		display: none;
+	}
+
+	h4 {
+		display: none;
+	}
+
+	#new_comment {
+		display: none;
+	}
+
 	.reply-to-msg {
 		display: none;
+		}
 
+	links {
+	display: none;
 	}
-}
-
-
-
 
 }
