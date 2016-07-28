@@ -142,6 +142,12 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a{
 		border: 1.5px solid #c01335;
 		color: white;
 	}
+	.navbar-brand:focus{
+		background-color: #e91d45;
+		border: 1.5px solid #e91d45;
+		text-align: center;
+		color: white;
+	}
 	.navbar-nav{
 		margin: 15px;
 		margin-left: -5%;
