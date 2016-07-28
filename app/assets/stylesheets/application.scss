@@ -262,50 +262,37 @@ input[value="Registrieren"]{
 
 
 
-/* Flextext */
-.flex-text-wrap {
-    position: relative;
+/* Manage user rights */
 
-    *zoom: 1;
+#manage_user_rights{
+	width: 60%;
+	td{
+		width: 10%;
+	}
+	td:first-child{
+		width: 75%;
+	}
+	p{
+		line-height: 1;
+	}
+	p:first-child{
+		float:left;
+		font-weight: bold;
+		margin-right: 2%;
+	}
+	p:nth-child(3){
+		font-style: italic;
+		color: #aaadb0;
+		margin-left: 2%;
+	}
 }
 
-textarea,
-.flex-text-wrap {
-    outline: 0;
-    margin: 0;
-    border: none;
-    padding: 0;
-
-    *padding-bottom: 0 !important;
-}
-
-.flex-text-wrap textarea,
-.flex-text-wrap pre {
-    white-space: pre-wrap;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-    *white-space: pre;
-    *word-wrap: break-word;
-}
-
-.flex-text-wrap textarea {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    resize: none;
-
-    /* IE7 box-sizing fudge factor */
-    *height: 94%;
-    *width: 94%;
-}
-
-.flex-text-wrap pre {
-    display: block;
-    visibility: hidden;
-}
+#search{
+		width: 40%;
+		height: 34px;
+		border-radius: 4px;
+		text-align: center;
+		margin: 0 auto 1%;
+		border: 1px solid #ccc;
+		vertical-align: top;
+	}
