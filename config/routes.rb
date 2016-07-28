@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'rights' => 'rights#show', as: "rights"
+  post 'rights' => 'rights#edit', as: "edit_rights"
+
   get 'topics/:id/manage_users' => 'topics#manage_users', as: "manage_users"
   post 'topics/:id/manage_users/invite' => 'topics#invite_user', as: "invite_user"
   post 'topics/:id/manage_users/invite_all' => 'topics#invite_all_filtered_users', as: "invite_all_filtered_users"

@@ -60,8 +60,8 @@ class TopicsController < ApplicationController
 	end
 
 	def manage_users
-		@related_users = @topic.users.order('created_at DESC')
-		searched_users = User.search(params[:search]).order("created_at DESC")
+		@related_users = @topic.users.order('username')
+		searched_users = User.search(params[:search]).order('username')
 		@filtered_users = searched_users.select { |user| !@related_users.include?(user) && user.id != @topic.user_id}
 	end
 
