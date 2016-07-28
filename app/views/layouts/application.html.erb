@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>Krautsalat</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'screen, projection', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'print', media: 'print', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -24,7 +25,7 @@
 				<% end %>
 				</ul>
 				<% if user_signed_in? && current_user.rights >= 1 %>
-					<li><%= link_to "Neues Thema", new_topic_path, class:"navbar-right navbar-text navbar-link" %></li>
+					<%= link_to "Neues Thema", new_topic_path, class:"navbar-right navbar-text navbar-link" %>
 				<% end %>
 			</div>
 		</nav>
