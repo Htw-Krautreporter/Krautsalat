@@ -1,7 +1,8 @@
 class RightsController < ApplicationController
 
 	def show
-		@users = User.search(params[:search]).order('username')
+		users = User.search(params[:search]).order('username')
+		@users = users.select { |user| user.id != current_user.id }
 	end
 
 	def update_rights
