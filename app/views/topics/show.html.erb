@@ -90,7 +90,12 @@
 
 				<div class = "comments" id="<%=post.id%>">
 
+					<% if post.comments.count == 1%>
+					<h4 id="<%=post.id%>" onclick="showComments('all_comments', this.id)"> <%=post.comments.count %> Kommentar </h4>
+					<% else %>
 					<h4 id="<%=post.id%>" onclick="showComments('all_comments', this.id)"> <%=post.comments.count %> Kommentare </h4>
+					<% end %>
+					
 					<div class="all_comments">
 						<%= render post.comments %>
 
