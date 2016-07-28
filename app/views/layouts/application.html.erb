@@ -23,6 +23,9 @@
 				<% else %>
 					<li><%= link_to "Login", new_user_session_path %></li>
 				<% end %>
+				<% if user_signed_in? && current_user.rights >= 1 %>
+					<li><%= link_to "Rechte verwalten", rights_path %></li>
+				<% end %>
 				</ul>
 				<% if user_signed_in? && current_user.rights >= 1 %>
 					<%= link_to "Neues Thema", new_topic_path, class:"navbar-right navbar-text navbar-link" %>
