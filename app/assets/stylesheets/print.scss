@@ -26,7 +26,25 @@
 		}
 
 	links {
-	display: none;
+		display: none;
+	}
+
+	.post-content {
+		font-weight: bold;
+	}
+
+	.comments{
+		font-size: 0.95em;
+	}
+
+	.comment-posted-by {
+		font-style: italic;
+		font-size: 0.8em;
+	}
+
+	.post-posted-by{
+		font-style: italic;
+		font-size: 0.8em;
 	}
 
 }
