@@ -23,7 +23,7 @@
 				<% else %>
 					<li><%= link_to "Login", new_user_session_path %></li>
 				<% end %>
-				<% if user_signed_in? && current_user.rights >= 1 %>
+				<% if user_signed_in? && current_user.rights == 2 %>
 					<li><%= link_to "Rechte verwalten", rights_path %></li>
 				<% end %>
 				</ul>
