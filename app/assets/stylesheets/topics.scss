@@ -76,7 +76,7 @@
 	padding: 2.0em 3em;
 	border-bottom: 4px solid #e91d45;
 	color: #black;
-	font-family: 'Tisa Sans', sans-serif;
+	font-family: 'TisaSansOT', sans-serif;
 	font-weight: 300;
 
 	h2 {
@@ -125,11 +125,6 @@
 		border-bottom: 1px solid #e6e6e6;*/
 	}
 }
-#posts{
-	max-height: 60em; 
-	overflow-y: scroll;
-	padding-right: 2%;
-}
 
 .topic-show-head{
 	line-height: 1.5em;
@@ -151,7 +146,7 @@
 		height: auto;
 		background-color: white;
 		z-index: 5;
-		font-family: 'Tisa Sans', sans-serif;
+		font-family: 'TisaSansOT', sans-serif;
 		font-weight: 700;
 		color: #7d7d7d;
 		font-style: italic;
@@ -302,3 +297,4 @@ table{
 		float: left;
 	}
 }
+

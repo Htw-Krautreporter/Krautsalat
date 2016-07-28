@@ -9,8 +9,13 @@
 	<p class="post-posted-by"> <%= signature_string(post.user.username, post.created_at, post.updated_at) %></p>
 	<% if current_user.rights == 2 || post.user_id == current_user.id %>
 		<div class="links">
-			<%= link_to "Bearbeiten", edit_topic_post_path(post.topic, post), class: "btn btn-default" %>
-			<%= link_to "Löschen", topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Beitrag wirklich löschen?" } %>
+			<%= link_to edit_topic_post_path(post.topic, post), class: "btn btn-default", title: "Bearbeiten" do %>
+						<span class="glyphicon glyphicon-pencil"></span>
+					<% end %>
+
+			<%= link_to topic_post_path(post.topic, post), class: "btn btn-default", method: :delete, title: "Thema löschen", data: { confirm: "Möchten Sie das Thema wirklich löschen?" } do %>
+				<span class="glyphicon glyphicon-remove"></span>
+			<% end %>
 		</div>
 	<% end %>
 </div>

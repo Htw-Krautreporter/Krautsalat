@@ -8,10 +8,10 @@
 					<span class="glyphicon glyphicon-arrow-left"></span>
 				<% end %>
 
-				<!-- Zurück -->
-				<%= link_to topics_path, class: "btn btn-default no_display" do %>
-					<span class="glyphicon glyphicon-arrow-left"></span>
-				<% end %>
+				<!-- Neuer Post -->
+				<a href="#add_new_post" class="btn btn-default" title="Beitrag hinzufügen">
+					<span class="glyphicon glyphicon-plus"></span>
+				</a>
 
 				<!-- Zurück -->
 				<%= link_to topics_path, class: "btn btn-default no_display" do %>
@@ -103,7 +103,7 @@
 			<% end %>
 		</div>
 
-		<div class="reply-to-msg">
+		<div id="add_new_post" class="reply-to-msg" >
 			<h3>Beitrag hinzufügen:</h3>
 			<%= render 'posts/form' %>
 		</div>

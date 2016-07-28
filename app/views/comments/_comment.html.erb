@@ -7,8 +7,12 @@
 	<p class="comment-posted-by"><%= signature_string(comment.user.username, comment.created_at, comment.updated_at) %></p>
 	<% if current_user.rights == 2 || comment.user_id == current_user.id %>
 		<div class="links">
-			<%= link_to "Bearbeiten", edit_topic_post_comment_path(post.topic, post, comment), class: "btn btn-default" %>
-			<%= link_to "Löschen", topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", method: :delete, data: { confirm: "Möchten Sie den Kommentar? wirklich löschen?" } %>
+			<%= link_to edit_topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", title: "Bearbeiten" do %>
+				<span class="glyphicon glyphicon-pencil"></span>
+			<% end %>
+			<%= link_to topic_post_comment_path(post.topic, post, comment), class: "btn btn-default", method: :delete, title: "Thema löschen", data: { confirm: "Möchten Sie das Thema wirklich löschen?" } do %>
+				<span class="glyphicon glyphicon-remove"></span>
+			<% end %>
 		</div>
 	<% end %>
 </div>
