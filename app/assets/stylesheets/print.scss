@@ -1,9 +1,11 @@
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
 
 @media print {
+
+	.navbar {
+		display: none;
+	}
 
 	.btn-custom {
 		display: none;
