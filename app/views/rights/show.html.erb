@@ -8,12 +8,19 @@
 
 	<tr>
 		<td><p><%= user.username %> <%= user.email %> <%= user.rights %></p></td>
-		
 
-		<%= form_for user, url: edit_rights_path do |f| %>
-			<%= f.select :rights, options_for_select(@rights, :selected => params[:rights]) %>
-			<%= f.submit %>
+		<% if user.rights != 0 %>
+			<td><%= link_to "Leser", update_rights_path(user_id: user.id, right_level: 0), method: :post, class: "btn btn-default" %></td>
 		<% end %>
+
+		<% if user.rights != 1 %>
+			<td><%= link_to "Autor", update_rights_path(user_id: user.id, right_level: 1), method: :post, class: "btn btn-default" %></td>
+		<% end %>
+
+		<% if user.rights != 2 %>
+			<td><%= link_to "Admin", update_rights_path(user_id: user.id, right_level: 2), method: :post, class: "btn btn-default" %></td>
+		<% end %>
+
 	</tr>
 			
 	
