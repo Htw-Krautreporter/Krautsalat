@@ -7,18 +7,18 @@
 <% @users.each do |user| %>
 
 	<tr>
-		<td><p><%= user.username %> <%= user.email %> <%= user.rights %></p></td>
+		<td><p><%= user.username %> <%= user.email %> <%= get_role_name(user.rights) %></p></td>
 
 		<% if user.rights != 0 %>
-			<td><%= link_to "Leser", update_rights_path(user_id: user.id, right_level: 0), method: :post, class: "btn btn-default" %></td>
+			<td><%= link_to get_role_name(0), update_rights_path(user_id: user.id, right_level: 0), method: :post, class: "btn btn-default" %></td>
 		<% end %>
 
 		<% if user.rights != 1 %>
-			<td><%= link_to "Autor", update_rights_path(user_id: user.id, right_level: 1), method: :post, class: "btn btn-default" %></td>
+			<td><%= link_to get_role_name(1), update_rights_path(user_id: user.id, right_level: 1), method: :post, class: "btn btn-default" %></td>
 		<% end %>
 
 		<% if user.rights != 2 %>
-			<td><%= link_to "Admin", update_rights_path(user_id: user.id, right_level: 2), method: :post, class: "btn btn-default" %></td>
+			<td><%= link_to get_role_name(2), update_rights_path(user_id: user.id, right_level: 2), method: :post, class: "btn btn-default" %></td>
 		<% end %>
 
 	</tr>

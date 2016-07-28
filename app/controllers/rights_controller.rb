@@ -2,7 +2,6 @@ class RightsController < ApplicationController
 
 	def show
 		@users = User.search(params[:search]).order('username')
-		@rights = [0, 1, 2]
 	end
 
 	def update_rights
